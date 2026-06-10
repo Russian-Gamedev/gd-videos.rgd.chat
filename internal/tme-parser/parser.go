@@ -52,17 +52,16 @@ func parseMessages(doc *goquery.Document) []Message {
 			return
 		}
 
-		msg.Text = strings.TrimSpace(s.Find(".tgme_widget_message_text").Text())
+		msg.Text = s.Find(".tgme_widget_message_text").Text()
 
 		s.Find(".tgme_widget_message_text a").Each(func(_ int, a *goquery.Selection) {
 			if href, exists := a.Attr("href"); exists {
 				msg.Links = append(msg.Links, href)
+				msg.Text = strings.ReplaceAll(msg.Text, strings.TrimSpace(a.Text()), "")
 			}
 		})
 
-		if msg.Text != "" && len(msg.Links) == 1 && msg.Text == msg.Links[0] {
-			msg.Text = ""
-		}
+		msg.Text = strings.TrimSpace(msg.Text)
 
 		msg.Media = parseMedia(s)
 
