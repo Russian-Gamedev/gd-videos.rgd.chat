@@ -48,6 +48,10 @@ func parseMessages(doc *goquery.Document) []Message {
 		}
 		msg.PostID = postID
 
+		if s.Find(".tgme_widget_message_user").Length() == 0 {
+			return
+		}
+
 		msg.Text = strings.TrimSpace(s.Find(".tgme_widget_message_text").Text())
 
 		s.Find(".tgme_widget_message_text a").Each(func(_ int, a *goquery.Selection) {
