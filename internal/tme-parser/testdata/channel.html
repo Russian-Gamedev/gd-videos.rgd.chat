@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>GDV – Telegram</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge"/>
+    <meta name="MobileOptimized" content="176"/>
+    <meta name="HandheldFriendly" content="True"/>
+
+    <meta property="og:title" content="GDV">
+    <meta property="og:image"
+          content="https://cdn4.telesco.pe/file/rdEr9W8om-2VhdujYTO_CEzAkY_hS7lKxPCzanXLA3_BozzJRorF6Q1QvgZIE0FbuFrJRpuG5k5KPsLlNRUA_IWvNhkQfebCSTk-um_0f9med7E55jizajParMzknY3P-MhrmbiFwRX02YFWZMw9NWQWvPd5MASl6be74v68ZhUv4MQVItJ2zrrw4rs8BnKTAx26Nl9s9l2IYBk5AsID1Owup46NvNR8aWZV81siYVdxBjXY21zY6de-muIdpzlrjagH_GoLjWMiI7h853qEIpP48gJcIoKC2d1rmTQ4mhPR1mMg7tMksp2NIdfHm3Pma1ORjirhw9inY315h7MPAw.jpg">
+    <meta property="og:site_name" content="Telegram">
+    <meta property="og:description" content="GameDev Videos
+Склад интересного медиа по теме видеоигр и их разработке.
+Если нашeл, что то интересное предлагай: t.me/GameDevVideos?direct">
+
+    <meta property="twitter:title" content="GDV">
+    <meta property="twitter:image"
+          content="https://cdn4.telesco.pe/file/rdEr9W8om-2VhdujYTO_CEzAkY_hS7lKxPCzanXLA3_BozzJRorF6Q1QvgZIE0FbuFrJRpuG5k5KPsLlNRUA_IWvNhkQfebCSTk-um_0f9med7E55jizajParMzknY3P-MhrmbiFwRX02YFWZMw9NWQWvPd5MASl6be74v68ZhUv4MQVItJ2zrrw4rs8BnKTAx26Nl9s9l2IYBk5AsID1Owup46NvNR8aWZV81siYVdxBjXY21zY6de-muIdpzlrjagH_GoLjWMiI7h853qEIpP48gJcIoKC2d1rmTQ4mhPR1mMg7tMksp2NIdfHm3Pma1ORjirhw9inY315h7MPAw.jpg">
+    <meta property="twitter:site" content="@Telegram">
+
+    <meta property="al:ios:app_store_id" content="686449807">
+    <meta property="al:ios:app_name" content="Telegram Messenger">
+    <meta property="al:ios:url" content="tg://resolve?domain=GameDevVideos">
+
+    <meta property="al:android:url" content="tg://resolve?domain=GameDevVideos">
+    <meta property="al:android:app_name" content="Telegram">
+    <meta property="al:android:package" content="org.telegram.messenger">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@Telegram">
+    <meta name="twitter:description" content="GameDev Videos
+Склад интересного медиа по теме видеоигр и их разработке.
+Если нашeл, что то интересное предлагай: t.me/GameDevVideos?direct
+">
+
+    <link rel="prev" href="/s/GameDevVideos?before=187">
+    <link rel="canonical" href="/s/GameDevVideos?before=212">
+
+    <script>window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && document.documentElement && document.documentElement.classList && document.documentElement.classList.add('theme_dark');</script>
+    <link rel="icon" type="image/svg+xml" href="//telegram.org/img/website_icon.svg?4">
+    <link rel="apple-touch-icon" sizes="180x180" href="//telegram.org/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="//telegram.org/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="//telegram.org/img/favicon-16x16.png">
+    <link rel="alternate icon" href="//telegram.org/img/favicon.ico" type="image/x-icon"/>
+    <link href="//telegram.org/css/font-roboto.css?1" rel="stylesheet" type="text/css">
+    <link href="//telegram.org/css/widget-frame.css?73" rel="stylesheet" media="screen">
+    <link href="//telegram.org/css/telegram-web.css?39" rel="stylesheet" media="screen">
+    <script>TBaseUrl = '/';</script>
+    <style>        .user-color-12 {
+        --user-line-gradient: repeating-linear-gradient(-45deg, #3391d4 0px, #3391d4 5px, #7dd3f0 5px, #7dd3f0 10px);
+        --user-accent-color: #3391d4;
+        --user-background: #3391d41f;
+    }
+
+    .user-color-10 {
+        --user-line-gradient: repeating-linear-gradient(-45deg, #27a910 0px, #27a910 5px, #a7dc57 5px, #a7dc57 10px);
+        --user-accent-color: #27a910;
+        --user-background: #27a9101f;
+    }
+
+    .user-color-8 {
+        --user-line-gradient: repeating-linear-gradient(-45deg, #e0802b 0px, #e0802b 5px, #fac534 5px, #fac534 10px);
+        --user-accent-color: #e0802b;
+        --user-background: #e0802b1f;
+    }
+
+    .user-color-7 {
+        --user-line-gradient: repeating-linear-gradient(-45deg, #e15052 0px, #e15052 5px, #f9ae63 5px, #f9ae63 10px);
+        --user-accent-color: #e15052;
+        --user-background: #e150521f;
+    }
+
+    .user-color-9 {
+        --user-line-gradient: repeating-linear-gradient(-45deg, #a05ff3 0px, #a05ff3 5px, #f48fff 5px, #f48fff 10px);
+        --user-accent-color: #a05ff3;
+        --user-background: #a05ff31f;
+    }
+
+    .user-color-11 {
+        --user-line-gradient: repeating-linear-gradient(-45deg, #27acce 0px, #27acce 5px, #82e8d6 5px, #82e8d6 10px);
+        --user-accent-color: #27acce;
+        --user-background: #27acce1f;
+    }
+
+    .user-color-13 {
+        --user-line-gradient: repeating-linear-gradient(-45deg, #dd4371 0px, #dd4371 5px, #ffbe9f 5px, #ffbe9f 10px);
+        --user-accent-color: #dd4371;
+        --user-background: #dd43711f;
+    }
+
+    .user-color-14 {
+        --user-line-gradient: repeating-linear-gradient(-45deg, #247bed 0px, #247bed 5px, #f04856 5px, #f04856 10px, #ffffff 10px, #ffffff 15px);
+        --user-accent-color: #247bed;
+        --user-background: #247bed1f;
+    }
+
+    .user-color-15 {
+        --user-line-gradient: repeating-linear-gradient(-45deg, #d67722 0px, #d67722 5px, #1ea011 5px, #1ea011 10px, #ffffff 10px, #ffffff 15px);
+        --user-accent-color: #d67722;
+        --user-background: #d677221f;
+    }
+
+    .user-color-16 {
+        --user-line-gradient: repeating-linear-gradient(-45deg, #179e42 0px, #179e42 5px, #e84a3f 5px, #e84a3f 10px, #ffffff 10px, #ffffff 15px);
+        --user-accent-color: #179e42;
+        --user-background: #179e421f;
+    }
+
+    .user-color-17 {
+        --user-line-gradient: repeating-linear-gradient(-45deg, #2894af 0px, #2894af 5px, #6fc456 5px, #6fc456 10px, #ffffff 10px, #ffffff 15px);
+        --user-accent-color: #2894af;
+        --user-background: #2894af1f;
+    }
+
+    .user-color-18 {
+        --user-line-gradient: repeating-linear-gradient(-45deg, #0c9ab3 0px, #0c9ab3 5px, #ffad95 5px, #ffad95 10px, #ffe6b5 10px, #ffe6b5 15px);
+        --user-accent-color: #0c9ab3;
+        --user-background: #0c9ab31f;
+    }
+
+    .user-color-19 {
+        --user-line-gradient: repeating-linear-gradient(-45deg, #7757d6 0px, #7757d6 5px, #f79610 5px, #f79610 10px, #ffde8e 10px, #ffde8e 15px);
+        --user-accent-color: #7757d6;
+        --user-background: #7757d61f;
+    }
+
+    .user-color-20 {
+        --user-line-gradient: repeating-linear-gradient(-45deg, #1585cf 0px, #1585cf 5px, #f2ab1d 5px, #f2ab1d 10px, #ffffff 10px, #ffffff 15px);
+        --user-accent-color: #1585cf;
+        --user-background: #1585cf1f;
+    }
+
+    body.dark .user-color-12, html.theme_dark .user-color-12 {
+        --user-line-gradient: repeating-linear-gradient(-45deg, #52bfff 0px, #52bfff 5px, #0b5494 5px, #0b5494 10px);
+        --user-accent-color: #52bfff;
+        --user-background: #52bfff1f;
+    }
+
+    body.dark .user-color-10, html.theme_dark .user-color-10 {
+        --user-line-gradient: repeating-linear-gradient(-45deg, #a7eb6e 0px, #a7eb6e 5px, #167e2d 5px, #167e2d 10px);
+        --user-accent-color: #a7eb6e;
+        --user-background: #a7eb6e1f;
+    }
+
+    body.dark .user-color-8, html.theme_dark .user-color-8 {
+        --user-line-gradient: repeating-linear-gradient(-45deg, #ecb04e 0px, #ecb04e 5px, #c35714 5px, #c35714 10px);
+        --user-accent-color: #ecb04e;
+        --user-background: #ecb04e1f;
+    }
+
+    body.dark .user-color-7, html.theme_dark .user-color-7 {
+        --user-line-gradient: repeating-linear-gradient(-45deg, #ff9380 0px, #ff9380 5px, #992f37 5px, #992f37 10px);
+        --user-accent-color: #ff9380;
+        --user-background: #ff93801f;
+    }
+
+    body.dark .user-color-9, html.theme_dark .user-color-9 {
+        --user-line-gradient: repeating-linear-gradient(-45deg, #c697ff 0px, #c697ff 5px, #5e31c8 5px, #5e31c8 10px);
+        --user-accent-color: #c697ff;
+        --user-background: #c697ff1f;
+    }
+
+    body.dark .user-color-11, html.theme_dark .user-color-11 {
+        --user-line-gradient: repeating-linear-gradient(-45deg, #40d8d0 0px, #40d8d0 5px, #045c7f 5px, #045c7f 10px);
+        --user-accent-color: #40d8d0;
+        --user-background: #40d8d01f;
+    }
+
+    body.dark .user-color-13, html.theme_dark .user-color-13 {
+        --user-line-gradient: repeating-linear-gradient(-45deg, #ff86a6 0px, #ff86a6 5px, #8e366e 5px, #8e366e 10px);
+        --user-accent-color: #ff86a6;
+        --user-background: #ff86a61f;
+    }
+
+    body.dark .user-color-14, html.theme_dark .user-color-14 {
+        --user-line-gradient: repeating-linear-gradient(-45deg, #3fa2fe 0px, #3fa2fe 5px, #e5424f 5px, #e5424f 10px, #ffffff 10px, #ffffff 15px);
+        --user-accent-color: #3fa2fe;
+        --user-background: #3fa2fe1f;
+    }
+
+    body.dark .user-color-15, html.theme_dark .user-color-15 {
+        --user-line-gradient: repeating-linear-gradient(-45deg, #ff905e 0px, #ff905e 5px, #32a527 5px, #32a527 10px, #ffffff 10px, #ffffff 15px);
+        --user-accent-color: #ff905e;
+        --user-background: #ff905e1f;
+    }
+
+    body.dark .user-color-16, html.theme_dark .user-color-16 {
+        --user-line-gradient: repeating-linear-gradient(-45deg, #66d364 0px, #66d364 5px, #d5444f 5px, #d5444f 10px, #ffffff 10px, #ffffff 15px);
+        --user-accent-color: #66d364;
+        --user-background: #66d3641f;
+    }
+
+    body.dark .user-color-17, html.theme_dark .user-color-17 {
+        --user-line-gradient: repeating-linear-gradient(-45deg, #22bce2 0px, #22bce2 5px, #3da240 5px, #3da240 10px, #ffffff 10px, #ffffff 15px);
+        --user-accent-color: #22bce2;
+        --user-background: #22bce21f;
+    }
+
+    body.dark .user-color-18, html.theme_dark .user-color-18 {
+        --user-line-gradient: repeating-linear-gradient(-45deg, #22bce2 0px, #22bce2 5px, #ff9778 5px, #ff9778 10px, #ffda6b 10px, #ffda6b 15px);
+        --user-accent-color: #22bce2;
+        --user-background: #22bce21f;
+    }
+
+    body.dark .user-color-19, html.theme_dark .user-color-19 {
+        --user-line-gradient: repeating-linear-gradient(-45deg, #9791ff 0px, #9791ff 5px, #f2731d 5px, #f2731d 10px, #ffdb59 10px, #ffdb59 15px);
+        --user-accent-color: #9791ff;
+        --user-background: #9791ff1f;
+    }
+
+    body.dark .user-color-20, html.theme_dark .user-color-20 {
+        --user-line-gradient: repeating-linear-gradient(-45deg, #3da6eb 0px, #3da6eb 5px, #eea51d 5px, #eea51d 10px, #ffffff 10px, #ffffff 15px);
+        --user-accent-color: #3da6eb;
+        --user-background: #3da6eb1f;
+    }
+
+    .user-color-6, .user-color-4, .user-color-2, .user-color-0, .user-color-1, .user-color-3, .user-color-5, .user-color-default {
+        --user-accent-color: var(--accent-color);
+        --user-accent-background: var(--accent-background);
+        --user-line-gradient: linear-gradient(45deg, var(--accent-color), var(--accent-color));
+    }</style>
+</head>
+<body class="widget_frame_base tgme_webpreview emoji_image thin_box_shadow tme_mode no_transitions">
+<div class="tgme_background_wrap">
+    <canvas id="tgme_background" class="tgme_background" width="50" height="50"
+            data-colors="dbddbb,6ba587,d5d88d,88b884"></canvas>
+    <div class="tgme_background_pattern"></div>
+</div>
+<header class="tgme_header search_collapsed">
+    <div class="tgme_container">
+        <div class="tgme_header_search">
+            <form class="tgme_header_search_form" action="/s/GameDevVideos">
+                <svg class="tgme_header_search_form_icon" width="20" height="20" viewBox="0 0 20 20">
+                    <g fill="none" stroke="#7D7F81" stroke-width="1.4">
+                        <circle cx="9" cy="9" r="6"></circle>
+                        <path d="M13.5,13.5 L17,17" stroke-linecap="round"></path>
+                    </g>
+                </svg>
+                <input class="tgme_header_search_form_input js-header_search" placeholder="Search" name="q"
+                       autocomplete="off" value=""/>
+                <a href="/s/GameDevVideos" class="tgme_header_search_form_clear">
+                    <svg class="tgme_action_button_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                         width="20" height="20">
+                        <g class="icon_body" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#000000"
+                           stroke-width="1.5">
+                            <path d="M6 14l8-8m0 8L6 6" stroke-dasharray="0,11.314" stroke-dashoffset="5.657"/>
+                            <path d="M26 14l8-8m0 8l-8-8" stroke-dasharray="0.371,10.943" stroke-dashoffset="5.842"/>
+                            <path d="M46 14l8-8m0 8l-8-8" stroke-dasharray="1.982,9.332" stroke-dashoffset="6.647756"/>
+                            <path d="M66 14l8-8m0 8l-8-8" stroke-dasharray="5.173,6.14" stroke-dashoffset="8.243"/>
+                            <path d="M86 14l8-8m0 8l-8-8" stroke-dasharray="7.866,3.448" stroke-dashoffset="9.59"/>
+                            <path d="M106 14l8-8m0 8l-8-8" stroke-dasharray="9.471,1.843" stroke-dashoffset="10.392"/>
+                            <path d="M126 14l8-8m0 8l-8-8" stroke-dasharray="10.417,0.896" stroke-dashoffset="10.866"/>
+                            <path d="M146 14l8-8m0 8l-8-8" stroke-dasharray="10.961,0.353" stroke-dashoffset="11.137"/>
+                            <path d="M166 14l8-8m0 8l-8-8" stroke-dasharray="11.234,0.08" stroke-dashoffset="11.274"/>
+                            <path d="M186 14l8-8m0 8l-8-8"/>
+                        </g>
+                    </svg>
+                </a>
+            </form>
+        </div>
+        <div class="tgme_header_right_column">
+            <section class="tgme_right_column">
+                <div class="tgme_channel_info">
+                    <div class="tgme_channel_info_header">
+                        <i class="tgme_page_photo_image bgcolor3" data-content="G"><img
+                                src="https://cdn4.telesco.pe/file/hTWlRh-b9RaXopMvXcC_WOz-VubiTd10gD8uMhpxOlUr4a6KkxoMkmyc2fugmHQkf9dBmm_bSGch77gn8lyXVm6A3oXfJh2_kLEEXytl8rXjew8JPT8IK6ZFTy1Hzr9SwKZCbvSz_DBGAq4yhGv5lnSeoYNGBl0Dh5c5WCHCqRDi3AAlshQY3_COMif8CxhYdepxqnn-nxn0DZ94V608vBxfqVy25DtiMOSuQPM_S05-wF83PQC1i5lAnwsMzSVmyIl4d02yXJpziHzLSL-ATRnFN0Dmhi-4OwCjXG-WX5bPl2aXhDmimKiBd_0CMHIwb6K69m5y0WZHlhxvw9JrKA.jpg"></i>
+                        <div class="tgme_channel_info_header_title_wrap">
+                            <div class="tgme_channel_info_header_title"><span dir="auto">GDV</span></div>
+                            <div class="tgme_channel_info_header_labels"></div>
+                        </div>
+                        <div class="tgme_channel_info_header_username"><a href="https://t.me/GameDevVideos">@GameDevVideos</a>
+                        </div>
+                    </div>
+                    <div class="tgme_channel_info_counters">
+                        <div class="tgme_channel_info_counter"><span class="counter_value">13</span> <span
+                                class="counter_type">subscribers</span></div>
+                        <div class="tgme_channel_info_counter"><span class="counter_value">1</span> <span
+                                class="counter_type">photo</span></div>
+                        <div class="tgme_channel_info_counter"><span class="counter_value">3</span> <span
+                                class="counter_type">videos</span></div>
+                        <div class="tgme_channel_info_counter"><span class="counter_value">182</span> <span
+                                class="counter_type">links</span></div>
+                    </div>
+                    <div class="tgme_channel_info_description">GameDev Videos <br/>Склад интересного медиа по теме
+                        видеоигр и их разработке.<br/>Если нашeл, что то интересное предлагай: <a
+                                href="http://t.me/GameDevVideos?direct" target="_blank" rel="noopener">t.me/GameDevVideos?direct</a>
+                    </div>
+                    <a class="tgme_channel_download_telegram"
+                       href="//telegram.org/dl?tme=c608a3f04afb32b0ca_13320948980229932130">
+                        <svg class="tgme_channel_download_telegram_icon" width="21px" height="18px" viewBox="0 0 21 18">
+                            <g fill="none">
+                                <path fill="#ffffff"
+                                      d="M0.554,7.092 L19.117,0.078 C19.737,-0.156 20.429,0.156 20.663,0.776 C20.745,0.994 20.763,1.23 20.713,1.457 L17.513,16.059 C17.351,16.799 16.62,17.268 15.88,17.105 C15.696,17.065 15.523,16.987 15.37,16.877 L8.997,12.271 C8.614,11.994 8.527,11.458 8.805,11.074 C8.835,11.033 8.869,10.994 8.905,10.958 L15.458,4.661 C15.594,4.53 15.598,4.313 15.467,4.176 C15.354,4.059 15.174,4.037 15.036,4.125 L6.104,9.795 C5.575,10.131 4.922,10.207 4.329,10.002 L0.577,8.704 C0.13,8.55 -0.107,8.061 0.047,7.614 C0.131,7.374 0.316,7.182 0.554,7.092 Z"></path>
+                            </g>
+                        </svg>
+                        Download Telegram
+                    </a>
+                    <div class="tgme_footer">
+                        <div class="tgme_footer_column">
+                            <h5><a href="//telegram.org/faq">About</a></h5>
+                        </div>
+                        <div class="tgme_footer_column">
+                            <h5><a href="//telegram.org/blog">Blog</a></h5>
+                        </div>
+                        <div class="tgme_footer_column">
+                            <h5><a href="//telegram.org/apps">Apps</a></h5>
+                        </div>
+                        <div class="tgme_footer_column">
+                            <h5><a href="//core.telegram.org/">Platform</a></h5>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="tgme_header_info">
+            <a class="tgme_channel_join_telegram" href="//telegram.org/dl?tme=c608a3f04afb32b0ca_13320948980229932130">
+                <svg class="tgme_channel_join_telegram_icon" width="19px" height="16px" viewBox="0 0 19 16">
+                    <g fill="none">
+                        <path fill="#ffffff"
+                              d="M0.465,6.638 L17.511,0.073 C18.078,-0.145 18.714,0.137 18.932,0.704 C19.009,0.903 19.026,1.121 18.981,1.33 L16.042,15.001 C15.896,15.679 15.228,16.111 14.549,15.965 C14.375,15.928 14.211,15.854 14.068,15.748 L8.223,11.443 C7.874,11.185 7.799,10.694 8.057,10.345 C8.082,10.311 8.109,10.279 8.139,10.249 L14.191,4.322 C14.315,4.201 14.317,4.002 14.195,3.878 C14.091,3.771 13.926,3.753 13.8,3.834 L5.602,9.138 C5.112,9.456 4.502,9.528 3.952,9.333 L0.486,8.112 C0.077,7.967 -0.138,7.519 0.007,7.11 C0.083,6.893 0.25,6.721 0.465,6.638 Z"></path>
+                    </g>
+                </svg>
+                Join
+            </a>
+            <a class="tgme_header_link" href="https://t.me/GameDevVideos">
+                <i class="tgme_page_photo_image bgcolor3" data-content="G"><img
+                        src="https://cdn4.telesco.pe/file/hTWlRh-b9RaXopMvXcC_WOz-VubiTd10gD8uMhpxOlUr4a6KkxoMkmyc2fugmHQkf9dBmm_bSGch77gn8lyXVm6A3oXfJh2_kLEEXytl8rXjew8JPT8IK6ZFTy1Hzr9SwKZCbvSz_DBGAq4yhGv5lnSeoYNGBl0Dh5c5WCHCqRDi3AAlshQY3_COMif8CxhYdepxqnn-nxn0DZ94V608vBxfqVy25DtiMOSuQPM_S05-wF83PQC1i5lAnwsMzSVmyIl4d02yXJpziHzLSL-ATRnFN0Dmhi-4OwCjXG-WX5bPl2aXhDmimKiBd_0CMHIwb6K69m5y0WZHlhxvw9JrKA.jpg"></i>
+                <div class="tgme_header_title_wrap">
+                    <div class="tgme_header_title"><span dir="auto">GDV</span></div>
+                    <div class="tgme_header_labels"></div>
+                </div>
+                <div class="tgme_header_counter">13 subscribers</div>
+            </a>
+        </div>
+    </div>
+</header>
+<main class="tgme_main" data-url="/GameDevVideos">
+    <div class="tgme_container">
+        <section class="tgme_channel_history js-message_history">
+            <div class="tgme_widget_message_centered js-messages_more_wrap"><a href="/s/GameDevVideos?before=187"
+                                                                               class="tme_messages_more js-messages_more"
+                                                                               data-before="187"></a></div>
+            <div class="tgme_widget_message_wrap js-widget_message_wrap">
+                <div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="GameDevVideos/187"
+                     data-view="eyJjIjotMzkzNDg1MDk2NSwicCI6MTg3LCJ0IjoxNzgxMTA3NzI5LCJoIjoiMTAwZDVhYTlmMWRjODRhYjgxIn0">
+                    <div class="tgme_widget_message_user"><a href="https://t.me/GameDevVideos"><i
+                            class="tgme_widget_message_user_photo bgcolor3" data-content="G"><img
+                            src="https://cdn4.telesco.pe/file/hTWlRh-b9RaXopMvXcC_WOz-VubiTd10gD8uMhpxOlUr4a6KkxoMkmyc2fugmHQkf9dBmm_bSGch77gn8lyXVm6A3oXfJh2_kLEEXytl8rXjew8JPT8IK6ZFTy1Hzr9SwKZCbvSz_DBGAq4yhGv5lnSeoYNGBl0Dh5c5WCHCqRDi3AAlshQY3_COMif8CxhYdepxqnn-nxn0DZ94V608vBxfqVy25DtiMOSuQPM_S05-wF83PQC1i5lAnwsMzSVmyIl4d02yXJpziHzLSL-ATRnFN0Dmhi-4OwCjXG-WX5bPl2aXhDmimKiBd_0CMHIwb6K69m5y0WZHlhxvw9JrKA.jpg"></i></a>
+                    </div>
+                    <div class="tgme_widget_message_bubble">
+
+                        <i class="tgme_widget_message_bubble_tail">
+                            <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+                                <g fill="none">
+                                    <path class="background" fill="#ffffff"
+                                          d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+                                    <path class="border_1x" fill="#d7e3ec"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+                                    <path class="border_2x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+                                    <path class="border_3x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+                                </g>
+                            </svg>
+                        </i>
+                        <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name"
+                                                                                href="https://t.me/GameDevVideos"><span
+                                dir="auto">GDV</span></a></div>
+
+
+                        <div class="tgme_widget_message_text js-message_text" dir="auto"><a
+                                href="https://youtu.be/Qje-PSZeMHI" target="_blank" rel="noopener">https://youtu.be/Qje-PSZeMHI</a>
+                        </div>
+                        <a class="tgme_widget_message_link_preview" href="https://youtu.be/Qje-PSZeMHI">
+                            <i class="link_preview_right_image"
+                               style="background-image:url('https://cdn4.telesco.pe/file/rynz_SfFWyWmbCwXmd51ImMDYPCQiFTbLqqaWyvu56yI1yUg8m4LDSV5TzId2AW3P4UMzw37jlGm2X34DOwf-aE26u50eSeL_6yMBUesQEcOBd-ALfChztg5dbeE9f_vBeUxSGup2GE6ph3p6iUnMexgtxMGZWFr3No35eCNFaSicSTpAnFhy4N-m0ylZOhw-R5nyA4HfRxg53lB_pv8ljS9mX5XmNqMrMLwd0oCPN2bkk4E--NEpiyy5bsnn9aTxwLPS9BM9aRWg2R1A-zd4U-9yx6-dsSspldBEusqqsPvJLZnjsQ6PEeQcGHoBqgAjGRIXzwwfTr-8DXCweNLoA.jpg')"></i>
+                            <div class="link_preview_site_name accent_color" dir="auto">YouTube</div>
+
+                            <div class="link_preview_title" dir="auto">Игры заставляют нас копить мусор</div>
+                            <div class="link_preview_description" dir="auto">Телеграм:
+                                https://t.me/+okIQggU039pmYmMy<br/>Поддержать монетой: Донат:
+                                https://www.donationalerts.com/r/smorph<br/><br/>Каждый раз одно и то же: начинаешь
+                                выживач, аккуратно сортируешь лут по сундукам, чувствуешь себя гением логистики… а через
+                                пару часов база превращается…
+                            </div>
+                        </a>
+                        <div class="tgme_widget_message_footer compact js-message_footer">
+
+                            <div class="tgme_widget_message_info short js-message_info">
+                                <span class="tgme_widget_message_views">11</span><span
+                                    class="copyonly"> views</span><span class="tgme_widget_message_meta"><a
+                                    class="tgme_widget_message_date" href="https://t.me/GameDevVideos/187"><time
+                                    datetime="2026-05-31T05:36:28+00:00" class="time">05:36</time></a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tgme_widget_message_wrap js-widget_message_wrap">
+                <div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="GameDevVideos/188"
+                     data-view="eyJjIjotMzkzNDg1MDk2NSwicCI6MTg4LCJ0IjoxNzgxMTA3NzI5LCJoIjoiNjc0NjgyZDMzOWFjNTgyOWE1In0">
+                    <div class="tgme_widget_message_user"><a href="https://t.me/GameDevVideos"><i
+                            class="tgme_widget_message_user_photo bgcolor3" data-content="G"><img
+                            src="https://cdn4.telesco.pe/file/hTWlRh-b9RaXopMvXcC_WOz-VubiTd10gD8uMhpxOlUr4a6KkxoMkmyc2fugmHQkf9dBmm_bSGch77gn8lyXVm6A3oXfJh2_kLEEXytl8rXjew8JPT8IK6ZFTy1Hzr9SwKZCbvSz_DBGAq4yhGv5lnSeoYNGBl0Dh5c5WCHCqRDi3AAlshQY3_COMif8CxhYdepxqnn-nxn0DZ94V608vBxfqVy25DtiMOSuQPM_S05-wF83PQC1i5lAnwsMzSVmyIl4d02yXJpziHzLSL-ATRnFN0Dmhi-4OwCjXG-WX5bPl2aXhDmimKiBd_0CMHIwb6K69m5y0WZHlhxvw9JrKA.jpg"></i></a>
+                    </div>
+                    <div class="tgme_widget_message_bubble">
+
+                        <i class="tgme_widget_message_bubble_tail">
+                            <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+                                <g fill="none">
+                                    <path class="background" fill="#ffffff"
+                                          d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+                                    <path class="border_1x" fill="#d7e3ec"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+                                    <path class="border_2x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+                                    <path class="border_3x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+                                </g>
+                            </svg>
+                        </i>
+                        <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name"
+                                                                                href="https://t.me/GameDevVideos"><span
+                                dir="auto">GDV</span></a></div>
+
+
+                        <div class="tgme_widget_message_text js-message_text" dir="auto"><a
+                                href="https://youtu.be/BcvaXLtPolM" target="_blank" rel="noopener">https://youtu.be/BcvaXLtPolM</a>
+                        </div>
+                        <a class="tgme_widget_message_link_preview" href="https://youtu.be/BcvaXLtPolM">
+                            <i class="link_preview_right_image"
+                               style="background-image:url('https://cdn4.telesco.pe/file/B7B5oGTOVw_eQX6tZ5-5j2AdtI0y8WmxWPPUF-7ycqDCErdk2U_v_CI39zhowsrl23tnc-XJeXsbIO_ak3cfTuZQFSIvmUiS2O_Xn3j1rOVfMZzJbLZsYNOCD8Qtewp74UF9K9Hg7KYmssZR9FyQwxv6g58Qo_x-vkhl35x86wJ3xryckiOr4Vg48sBaYL0_SdT9R3ssr3idzuzMNA4SmOf2AcC0zDDB78VgKGfITJyJjRN8bE9uegokMhJEN1gX9W7wnFVOzFmsIhCY0vCXzcexougY3BnyaDKKULLG-J-ocR_z2BTtA1q4RjfPSJiOZ69FlCsLIyFDQiuAAk5ahw.jpg')"></i>
+                            <div class="link_preview_site_name accent_color" dir="auto">YouTube</div>
+
+                            <div class="link_preview_title" dir="auto">УЖАСЫ РЕВЬЮ-БОМБИНГА</div>
+                            <div class="link_preview_description" dir="auto">Enjoy the videos and music you love, upload
+                                original content, and share it all with friends, family, and the world on YouTube.
+                            </div>
+                        </a>
+                        <div class="tgme_widget_message_footer compact js-message_footer">
+
+                            <div class="tgme_widget_message_info short js-message_info">
+                                <span class="tgme_widget_message_views">10</span><span
+                                    class="copyonly"> views</span><span class="tgme_widget_message_meta"><a
+                                    class="tgme_widget_message_date" href="https://t.me/GameDevVideos/188"><time
+                                    datetime="2026-05-31T19:10:28+00:00" class="time">19:10</time></a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tgme_widget_message_wrap js-widget_message_wrap">
+                <div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="GameDevVideos/189"
+                     data-view="eyJjIjotMzkzNDg1MDk2NSwicCI6MTg5LCJ0IjoxNzgxMTA3NzI5LCJoIjoiZmM3MDE1YTFmZDJlNDdjNzNhIn0">
+                    <div class="tgme_widget_message_user"><a href="https://t.me/GameDevVideos"><i
+                            class="tgme_widget_message_user_photo bgcolor3" data-content="G"><img
+                            src="https://cdn4.telesco.pe/file/hTWlRh-b9RaXopMvXcC_WOz-VubiTd10gD8uMhpxOlUr4a6KkxoMkmyc2fugmHQkf9dBmm_bSGch77gn8lyXVm6A3oXfJh2_kLEEXytl8rXjew8JPT8IK6ZFTy1Hzr9SwKZCbvSz_DBGAq4yhGv5lnSeoYNGBl0Dh5c5WCHCqRDi3AAlshQY3_COMif8CxhYdepxqnn-nxn0DZ94V608vBxfqVy25DtiMOSuQPM_S05-wF83PQC1i5lAnwsMzSVmyIl4d02yXJpziHzLSL-ATRnFN0Dmhi-4OwCjXG-WX5bPl2aXhDmimKiBd_0CMHIwb6K69m5y0WZHlhxvw9JrKA.jpg"></i></a>
+                    </div>
+                    <div class="tgme_widget_message_bubble">
+
+                        <i class="tgme_widget_message_bubble_tail">
+                            <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+                                <g fill="none">
+                                    <path class="background" fill="#ffffff"
+                                          d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+                                    <path class="border_1x" fill="#d7e3ec"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+                                    <path class="border_2x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+                                    <path class="border_3x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+                                </g>
+                            </svg>
+                        </i>
+                        <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name"
+                                                                                href="https://t.me/GameDevVideos"><span
+                                dir="auto">GDV</span></a></div>
+
+
+                        <div class="tgme_widget_message_text js-message_text" dir="auto">Мечта vs Реальность: Как
+                            геймпады меня РАЗОЧАРОВАЛИ | Дорого ≠ Качественно (feat. Унылый)<br/><a
+                                    href="https://www.youtube.com/watch?v=C9pYNUnHR2U" target="_blank" rel="noopener">https://www.youtube.com/watch?v=C9pYNUnHR2U</a>
+                        </div>
+                        <a class="tgme_widget_message_link_preview" href="https://www.youtube.com/watch?v=C9pYNUnHR2U">
+                            <i class="link_preview_right_image"
+                               style="background-image:url('https://cdn4.telesco.pe/file/kJu6hNXiEV5G8kmuvE7hmi5546LkaBHCLDn4nR2dpOToeLsoI4zB8thJfeJMxpc_tIjNeyCmi3TtLih3IWfJzsOWG6bdqxvQkfqfVKp_TBT9RGe6_zN06J90TAudXeC7srwl0RIpnTB7RWN52mbro8ngIHo6W_ceV2V_szXzayD8Hk5dJnxCn-b5qd9jxy8aZadqiywvIlGqcpWwyUDLA1DsKPU-NWNU6rn8QdRODz5PwsRZETXBjwLeyjnN8TzHItjVHKMRw1IfpkrnCWf0-9psDofd_cmk1CKHJGFAf-hJoBQwXHzQcRWtMmc0yFCtd1wrXPHUovM8LCfdM1CMPg.jpg')"></i>
+                            <div class="link_preview_site_name accent_color" dir="auto">YouTube</div>
+
+                            <div class="link_preview_title" dir="auto">Мечта vs Реальность: Как геймпады меня
+                                РАЗОЧАРОВАЛИ | Дорого ≠ Качественно (feat. Унылый)
+                            </div>
+                            <div class="link_preview_description" dir="auto">Печальный рассказ о том как автор ролика
+                                (рассказывающий о себе в третьем лице, потому что шиз) раз за разом пытался найти по
+                                настоящему хороший геймпад и обламывался. Автор понадеялся обрести счастье в геймпадах
+                                Flydigi, но увы, хвалёным китайцам далеко…
+                            </div>
+                        </a>
+                        <div class="tgme_widget_message_footer compact js-message_footer">
+
+                            <div class="tgme_widget_message_info short js-message_info">
+                                <span class="tgme_widget_message_views">12</span><span
+                                    class="copyonly"> views</span><span class="tgme_widget_message_meta"><a
+                                    class="tgme_widget_message_date" href="https://t.me/GameDevVideos/189"><time
+                                    datetime="2026-06-01T02:49:26+00:00" class="time">02:49</time></a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tgme_widget_message_wrap js-widget_message_wrap">
+                <div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="GameDevVideos/190"
+                     data-view="eyJjIjotMzkzNDg1MDk2NSwicCI6MTkwLCJ0IjoxNzgxMTA3NzI5LCJoIjoiM2I1ODUwNTZmZGZjY2E2ZDZmIn0">
+                    <div class="tgme_widget_message_user"><a href="https://t.me/GameDevVideos"><i
+                            class="tgme_widget_message_user_photo bgcolor3" data-content="G"><img
+                            src="https://cdn4.telesco.pe/file/hTWlRh-b9RaXopMvXcC_WOz-VubiTd10gD8uMhpxOlUr4a6KkxoMkmyc2fugmHQkf9dBmm_bSGch77gn8lyXVm6A3oXfJh2_kLEEXytl8rXjew8JPT8IK6ZFTy1Hzr9SwKZCbvSz_DBGAq4yhGv5lnSeoYNGBl0Dh5c5WCHCqRDi3AAlshQY3_COMif8CxhYdepxqnn-nxn0DZ94V608vBxfqVy25DtiMOSuQPM_S05-wF83PQC1i5lAnwsMzSVmyIl4d02yXJpziHzLSL-ATRnFN0Dmhi-4OwCjXG-WX5bPl2aXhDmimKiBd_0CMHIwb6K69m5y0WZHlhxvw9JrKA.jpg"></i></a>
+                    </div>
+                    <div class="tgme_widget_message_bubble">
+
+                        <i class="tgme_widget_message_bubble_tail">
+                            <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+                                <g fill="none">
+                                    <path class="background" fill="#ffffff"
+                                          d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+                                    <path class="border_1x" fill="#d7e3ec"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+                                    <path class="border_2x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+                                    <path class="border_3x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+                                </g>
+                            </svg>
+                        </i>
+                        <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name"
+                                                                                href="https://t.me/GameDevVideos"><span
+                                dir="auto">GDV</span></a></div>
+
+
+                        <div class="tgme_widget_message_text js-message_text" dir="auto"><a
+                                href="https://youtu.be/DNxdaS4gfAo" target="_blank" rel="noopener">https://youtu.be/DNxdaS4gfAo</a>
+                        </div>
+                        <a class="tgme_widget_message_link_preview" href="https://youtu.be/DNxdaS4gfAo">
+                            <i class="link_preview_right_image"
+                               style="background-image:url('https://cdn4.telesco.pe/file/KLzuh78V1Hb9CM2es7WktbppmMBv861jVcls30DGv4H4-k6CiSow5Q0kSzGGdoif9rlDldb2DpbB3Xc2A3hlWp298dGw5m8I7IqmvoMnoTtfhK9Qg3VXnkL9QjFs3M12U1vqLyJY6ltEIFDIxN7lV68Y9porl5gjhjnUyig17FyZ1PCQtGJheOIFPJh2rgYX5cbrQ16pNXToVEGCbzYL2zCQD_i-It44cyMZ-Rl01k12nSdDjHTKsKbz5mkQN4Qw8ZuldvpEtOxaSpQksxNtpVAIsFSW6i5eRVgviqcLssl8EeyxBpnugLjmftGitsJXva6sp3Nu0Go5BF2lOU8bRA.jpg')"></i>
+                            <div class="link_preview_site_name accent_color" dir="auto">YouTube</div>
+
+                            <div class="link_preview_title" dir="auto">НЕЧТО СТРАННОЕ ПРОИСХОДИТ с ИИ</div>
+                            <div class="link_preview_description" dir="auto"><i class="emoji"
+                                                                                style="background-image:url('//telegram.org/img/emoji/40/F09F92AA.png')"><b>💪</b></i>
+                                Durev VPN — твой надёжный доступ ко всему интернету&#33;<br/><i class="emoji"
+                                                                                                style="background-image:url('//telegram.org/img/emoji/40/F09F8E81.png')"><b>🎁</b></i>
+                                Забери 3 бесплатных дня в Telegram: https://bit.ly/azazello3days<br/><i class="emoji"
+                                                                                                        style="background-image:url('//telegram.org/img/emoji/40/F09F8C8D.png')"><b>🌍</b></i>
+                                Или подключись на сайте: https://bit.ly/azazello<br/>Промокод: AZAZELLO<br/><br/><i
+                                        class="emoji"
+                                        style="background-image:url('//telegram.org/img/emoji/40/F09F9484.png')"><b>🔄</b></i>
+                                Уже используешь другой VPN? Перейди на Durev со скидкой до 80%.…
+                            </div>
+                        </a>
+                        <div class="tgme_widget_message_footer compact js-message_footer">
+
+                            <div class="tgme_widget_message_info short js-message_info">
+                                <span class="tgme_widget_message_views">11</span><span
+                                    class="copyonly"> views</span><span class="tgme_widget_message_meta"><a
+                                    class="tgme_widget_message_date" href="https://t.me/GameDevVideos/190"><time
+                                    datetime="2026-06-01T04:00:25+00:00" class="time">04:00</time></a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tgme_widget_message_wrap js-widget_message_wrap">
+                <div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="GameDevVideos/191"
+                     data-view="eyJjIjotMzkzNDg1MDk2NSwicCI6MTkxLCJ0IjoxNzgxMTA3NzI5LCJoIjoiOGIzY2U1ODg5YzJkNzUxYTJjIn0">
+                    <div class="tgme_widget_message_user"><a href="https://t.me/GameDevVideos"><i
+                            class="tgme_widget_message_user_photo bgcolor3" data-content="G"><img
+                            src="https://cdn4.telesco.pe/file/hTWlRh-b9RaXopMvXcC_WOz-VubiTd10gD8uMhpxOlUr4a6KkxoMkmyc2fugmHQkf9dBmm_bSGch77gn8lyXVm6A3oXfJh2_kLEEXytl8rXjew8JPT8IK6ZFTy1Hzr9SwKZCbvSz_DBGAq4yhGv5lnSeoYNGBl0Dh5c5WCHCqRDi3AAlshQY3_COMif8CxhYdepxqnn-nxn0DZ94V608vBxfqVy25DtiMOSuQPM_S05-wF83PQC1i5lAnwsMzSVmyIl4d02yXJpziHzLSL-ATRnFN0Dmhi-4OwCjXG-WX5bPl2aXhDmimKiBd_0CMHIwb6K69m5y0WZHlhxvw9JrKA.jpg"></i></a>
+                    </div>
+                    <div class="tgme_widget_message_bubble">
+
+                        <i class="tgme_widget_message_bubble_tail">
+                            <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+                                <g fill="none">
+                                    <path class="background" fill="#ffffff"
+                                          d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+                                    <path class="border_1x" fill="#d7e3ec"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+                                    <path class="border_2x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+                                    <path class="border_3x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+                                </g>
+                            </svg>
+                        </i>
+                        <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name"
+                                                                                href="https://t.me/GameDevVideos"><span
+                                dir="auto">GDV</span></a></div>
+
+
+                        <div class="tgme_widget_message_text js-message_text" dir="auto">Да не по теме игорей, и что вы
+                            мне сделаете?&#33;)
+                        </div>
+                        <div class="tgme_widget_message_footer compact js-message_footer">
+
+                            <div class="tgme_widget_message_info short js-message_info">
+                                <span class="tgme_widget_message_views">11</span><span
+                                    class="copyonly"> views</span><span class="tgme_widget_message_meta"><a
+                                    class="tgme_widget_message_date" href="https://t.me/GameDevVideos/191"><time
+                                    datetime="2026-06-01T04:00:55+00:00" class="time">04:00</time></a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tgme_widget_message_wrap js-widget_message_wrap">
+                <div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="GameDevVideos/192"
+                     data-view="eyJjIjotMzkzNDg1MDk2NSwicCI6MTkyLCJ0IjoxNzgxMTA3NzI5LCJoIjoiMDczNTE1MmMyZmVkNmRkMTYwIn0">
+                    <div class="tgme_widget_message_user"><a href="https://t.me/GameDevVideos"><i
+                            class="tgme_widget_message_user_photo bgcolor3" data-content="G"><img
+                            src="https://cdn4.telesco.pe/file/hTWlRh-b9RaXopMvXcC_WOz-VubiTd10gD8uMhpxOlUr4a6KkxoMkmyc2fugmHQkf9dBmm_bSGch77gn8lyXVm6A3oXfJh2_kLEEXytl8rXjew8JPT8IK6ZFTy1Hzr9SwKZCbvSz_DBGAq4yhGv5lnSeoYNGBl0Dh5c5WCHCqRDi3AAlshQY3_COMif8CxhYdepxqnn-nxn0DZ94V608vBxfqVy25DtiMOSuQPM_S05-wF83PQC1i5lAnwsMzSVmyIl4d02yXJpziHzLSL-ATRnFN0Dmhi-4OwCjXG-WX5bPl2aXhDmimKiBd_0CMHIwb6K69m5y0WZHlhxvw9JrKA.jpg"></i></a>
+                    </div>
+                    <div class="tgme_widget_message_bubble">
+
+                        <i class="tgme_widget_message_bubble_tail">
+                            <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+                                <g fill="none">
+                                    <path class="background" fill="#ffffff"
+                                          d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+                                    <path class="border_1x" fill="#d7e3ec"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+                                    <path class="border_2x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+                                    <path class="border_3x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+                                </g>
+                            </svg>
+                        </i>
+                        <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name"
+                                                                                href="https://t.me/GameDevVideos"><span
+                                dir="auto">GDV</span></a></div>
+
+
+                        <div class="tgme_widget_message_text js-message_text" dir="auto">Почему Kenshi - это АНОМАЛИЯ
+                            (ft. Amytrip)<br/><a href="https://www.youtube.com/watch?v=HI6iPqzxlw0" target="_blank"
+                                                 rel="noopener">https://www.youtube.com/watch?v=HI6iPqzxlw0</a></div>
+                        <a class="tgme_widget_message_link_preview" href="https://www.youtube.com/watch?v=HI6iPqzxlw0">
+                            <i class="link_preview_right_image"
+                               style="background-image:url('https://cdn4.telesco.pe/file/sCSPxLYK8-AGJGUfJ74eLVx3Q2wvv8xGQqJnXaLhWz1OWXCdv-1zsBqEj_wM4Tj-HMj8xCPNzhkl3SU0QOmKdlVpKzkPK0ZKjNxamSNwsMZUueSgdexAJNij3jwHcA1R_67zFXwRkms5LZmocKJAEs4lJoZ7ZCD6Zs4DxSIO5roDe_T6hc861OtdgWf7deX7ei_Jv55kfQWFLPFDVQa1F6ffCve2dB-ss_u7w-LlF-ewRbilBaljxXJdpuNT30K8as4Jevr_o3yhN0hjS_hRYni_HH9sP6l4CNCuZX-mcPFd5gYSLOlI6lzOI7zKUdEp3IZPE5OPQ5ghQDgezrc3iw.jpg')"></i>
+                            <div class="link_preview_site_name accent_color" dir="auto">YouTube</div>
+
+                            <div class="link_preview_title" dir="auto">Почему Kenshi - это АНОМАЛИЯ (ft. Amytrip)</div>
+                            <div class="link_preview_description" dir="auto">Пришла пора понять, чем уникален Кенши,
+                                почему это не просто сырой кусок кода а настоящий феномен в мире видеоигр.Разберу как
+                                историю создания игры так и её скелет и мясо. Прошу от вас максимального репоста, ибо
+                                сил было вложено немало <br/><br/>Мой телеграмм(ху…
+                            </div>
+                        </a>
+                        <div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i
+                                class="emoji"
+                                style="background-image:url('//telegram.org/img/emoji/40/F09F9180.png')"><b>👀</b></i>1</span>
+                        </div>
+                        <div class="tgme_widget_message_footer compact js-message_footer">
+
+                            <div class="tgme_widget_message_info short js-message_info">
+                                <span class="tgme_widget_message_views">12</span><span
+                                    class="copyonly"> views</span><span class="tgme_widget_message_meta"><a
+                                    class="tgme_widget_message_date" href="https://t.me/GameDevVideos/192"><time
+                                    datetime="2026-06-01T05:34:30+00:00" class="time">05:34</time></a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tgme_widget_message_wrap js-widget_message_wrap">
+                <div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="GameDevVideos/194"
+                     data-view="eyJjIjotMzkzNDg1MDk2NSwicCI6MTk0LCJ0IjoxNzgxMTA3NzI5LCJoIjoiNGZkMWYxZWVjYTE1ZWIyNWU1In0">
+                    <div class="tgme_widget_message_user"><a href="https://t.me/GameDevVideos"><i
+                            class="tgme_widget_message_user_photo bgcolor3" data-content="G"><img
+                            src="https://cdn4.telesco.pe/file/hTWlRh-b9RaXopMvXcC_WOz-VubiTd10gD8uMhpxOlUr4a6KkxoMkmyc2fugmHQkf9dBmm_bSGch77gn8lyXVm6A3oXfJh2_kLEEXytl8rXjew8JPT8IK6ZFTy1Hzr9SwKZCbvSz_DBGAq4yhGv5lnSeoYNGBl0Dh5c5WCHCqRDi3AAlshQY3_COMif8CxhYdepxqnn-nxn0DZ94V608vBxfqVy25DtiMOSuQPM_S05-wF83PQC1i5lAnwsMzSVmyIl4d02yXJpziHzLSL-ATRnFN0Dmhi-4OwCjXG-WX5bPl2aXhDmimKiBd_0CMHIwb6K69m5y0WZHlhxvw9JrKA.jpg"></i></a>
+                    </div>
+                    <div class="tgme_widget_message_bubble">
+
+                        <i class="tgme_widget_message_bubble_tail">
+                            <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+                                <g fill="none">
+                                    <path class="background" fill="#ffffff"
+                                          d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+                                    <path class="border_1x" fill="#d7e3ec"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+                                    <path class="border_2x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+                                    <path class="border_3x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+                                </g>
+                            </svg>
+                        </i>
+                        <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name"
+                                                                                href="https://t.me/GameDevVideos"><span
+                                dir="auto">GDV</span></a></div>
+
+
+                        <div class="tgme_widget_message_text js-message_text" dir="auto"><a
+                                href="https://www.youtube.com/watch?v=p0UZ-7Pg4qI" target="_blank" rel="noopener">https://www.youtube.com/watch?v=p0UZ-7Pg4qI</a>
+                        </div>
+                        <a class="tgme_widget_message_link_preview" href="https://www.youtube.com/watch?v=p0UZ-7Pg4qI">
+                            <i class="link_preview_right_image"
+                               style="background-image:url('https://cdn4.telesco.pe/file/TwW7arXDL7Dtz2IjpbuWbaHmhLgFnB_13BZ-TczxVX64YYR73nYg5MriGyMRYckEfCmNyvv_ACkuRVPt-CnrWriNDYMj-SqTPAeV0epDmGVOWt30u6AZPft5S2IuV8zVdqakIE2h2ltxX771Cc61kINB0wJVegP4YffXN0FmYoPwmv753LvxTLRxJLgS7dTBmBnuZBsNi_QrCD8nvEzjpUB0lr3yfahJP6PlY-xJRh2B4fFq31iqDSzf4oJ4P8EvqBk37qsziTPz8jHdLMPy02r4ayzyDmygAa_pCbmV2V1nczydvl5RgBLmDfwZOkcB_8WTMJbo1iRDKTYu1Fs6TQ.jpg')"></i>
+                            <div class="link_preview_site_name accent_color" dir="auto">YouTube</div>
+
+                            <div class="link_preview_title" dir="auto">Pixel Art Class - What actually matters when
+                                working with game engines
+                            </div>
+                            <div class="link_preview_description" dir="auto">Hey pals, here&#39;s a collection of
+                                lessons I&#39;ve learned while working on my game&#33; Insignia has been a long time
+                                coming, so I&#39;ve had years of working on strategies to learn what matters and what
+                                really doesn&#39;t for effective and manageable pixel art.<br/><br/>Wishlist…
+                            </div>
+                        </a>
+                        <div class="tgme_widget_message_footer compact js-message_footer">
+
+                            <div class="tgme_widget_message_info short js-message_info">
+                                <span class="tgme_widget_message_views">10</span><span
+                                    class="copyonly"> views</span><span class="tgme_widget_message_meta"><a
+                                    class="tgme_widget_message_date" href="https://t.me/GameDevVideos/194"><time
+                                    datetime="2026-06-01T19:59:43+00:00" class="time">19:59</time></a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tgme_widget_message_wrap js-widget_message_wrap">
+                <div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="GameDevVideos/195"
+                     data-view="eyJjIjotMzkzNDg1MDk2NSwicCI6MTk1LCJ0IjoxNzgxMTA3NzI5LCJoIjoiMzViNDAzNmZkYzljNzhiZGEzIn0">
+                    <div class="tgme_widget_message_user"><a href="https://t.me/GameDevVideos"><i
+                            class="tgme_widget_message_user_photo bgcolor3" data-content="G"><img
+                            src="https://cdn4.telesco.pe/file/hTWlRh-b9RaXopMvXcC_WOz-VubiTd10gD8uMhpxOlUr4a6KkxoMkmyc2fugmHQkf9dBmm_bSGch77gn8lyXVm6A3oXfJh2_kLEEXytl8rXjew8JPT8IK6ZFTy1Hzr9SwKZCbvSz_DBGAq4yhGv5lnSeoYNGBl0Dh5c5WCHCqRDi3AAlshQY3_COMif8CxhYdepxqnn-nxn0DZ94V608vBxfqVy25DtiMOSuQPM_S05-wF83PQC1i5lAnwsMzSVmyIl4d02yXJpziHzLSL-ATRnFN0Dmhi-4OwCjXG-WX5bPl2aXhDmimKiBd_0CMHIwb6K69m5y0WZHlhxvw9JrKA.jpg"></i></a>
+                    </div>
+                    <div class="tgme_widget_message_bubble">
+
+                        <i class="tgme_widget_message_bubble_tail">
+                            <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+                                <g fill="none">
+                                    <path class="background" fill="#ffffff"
+                                          d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+                                    <path class="border_1x" fill="#d7e3ec"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+                                    <path class="border_2x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+                                    <path class="border_3x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+                                </g>
+                            </svg>
+                        </i>
+                        <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name"
+                                                                                href="https://t.me/GameDevVideos"><span
+                                dir="auto">GDV</span></a></div>
+
+
+                        <div class="tgme_widget_message_text js-message_text" dir="auto"><a
+                                href="https://youtu.be/b65gZ4hBu3A" target="_blank" rel="noopener">https://youtu.be/b65gZ4hBu3A</a>
+                        </div>
+                        <a class="tgme_widget_message_link_preview" href="https://youtu.be/b65gZ4hBu3A">
+                            <i class="link_preview_right_image"
+                               style="background-image:url('https://cdn4.telesco.pe/file/vTIVkNyz5SQ-OtinTUd9tubw6KpRFg_2mNi6pL48RCufej-vU_FwCXXiOVt-vzcPAjb07Nm1loysGTUtdnO14hzjKp5Nl3vyjOAhaUE8FCdC6zton_7oqDgM7JQve8xrgCYJBtBw6w8piU2SVJc9HiInJH-BZ-HvsPWHx3YTmjggtQAMh0tIR6gkuZFRruHgoqxwCt81IeBsBZArdXpJbocdxCOzXRJYi-zadFVVuH3Yad7WnK7nNZSDzDixifTS23lZqTycOpr6R5c-ED1yvoc2QO519gbjXJIKeJ9j7jiCl6X_udMk4hmZJglTma8TGCyFiR4Y2HhBxnzRH4X09w.jpg')"></i>
+                            <div class="link_preview_site_name accent_color" dir="auto">YouTube</div>
+
+                            <div class="link_preview_title" dir="auto">Сделал Космических Рейнджеров, но в реальном
+                                времени&#33; Claude Opus 4.8 + GPT-5.5
+                            </div>
+                            <div class="link_preview_description" dir="auto">Что если попросить нейросети сделать игру в
+                                стиле «Космических Рейнджеров», но не пошаговую, а в реальном времени? Я попробовал:
+                                начал с Claude Opus 4.7, графику в итоге вытащил GPT-5.5 в Codex, а финал доделал уже
+                                Opus 4.8.<br/><br/>Прошли путь от прототипа «из…
+                            </div>
+                        </a>
+                        <div class="tgme_widget_message_footer compact js-message_footer">
+
+                            <div class="tgme_widget_message_info short js-message_info">
+                                <span class="tgme_widget_message_views">9</span><span
+                                    class="copyonly"> views</span><span class="tgme_widget_message_meta"><a
+                                    class="tgme_widget_message_date" href="https://t.me/GameDevVideos/195"><time
+                                    datetime="2026-06-02T12:41:28+00:00" class="time">12:41</time></a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tgme_widget_message_wrap js-widget_message_wrap">
+                <div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="GameDevVideos/196"
+                     data-view="eyJjIjotMzkzNDg1MDk2NSwicCI6MTk2LCJ0IjoxNzgxMTA3NzI5LCJoIjoiYjFjYmMzODkwY2U4YTNhNzJmIn0">
+                    <div class="tgme_widget_message_user"><a href="https://t.me/GameDevVideos"><i
+                            class="tgme_widget_message_user_photo bgcolor3" data-content="G"><img
+                            src="https://cdn4.telesco.pe/file/hTWlRh-b9RaXopMvXcC_WOz-VubiTd10gD8uMhpxOlUr4a6KkxoMkmyc2fugmHQkf9dBmm_bSGch77gn8lyXVm6A3oXfJh2_kLEEXytl8rXjew8JPT8IK6ZFTy1Hzr9SwKZCbvSz_DBGAq4yhGv5lnSeoYNGBl0Dh5c5WCHCqRDi3AAlshQY3_COMif8CxhYdepxqnn-nxn0DZ94V608vBxfqVy25DtiMOSuQPM_S05-wF83PQC1i5lAnwsMzSVmyIl4d02yXJpziHzLSL-ATRnFN0Dmhi-4OwCjXG-WX5bPl2aXhDmimKiBd_0CMHIwb6K69m5y0WZHlhxvw9JrKA.jpg"></i></a>
+                    </div>
+                    <div class="tgme_widget_message_bubble">
+
+                        <i class="tgme_widget_message_bubble_tail">
+                            <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+                                <g fill="none">
+                                    <path class="background" fill="#ffffff"
+                                          d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+                                    <path class="border_1x" fill="#d7e3ec"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+                                    <path class="border_2x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+                                    <path class="border_3x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+                                </g>
+                            </svg>
+                        </i>
+                        <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name"
+                                                                                href="https://t.me/GameDevVideos"><span
+                                dir="auto">GDV</span></a></div>
+
+
+                        <div class="tgme_widget_message_text js-message_text" dir="auto">Первая RTS которая стала
+                            ХОРРОРОМ. Homeworld Cataclysm (Emergence)<br/><a
+                                    href="https://www.youtube.com/watch?v=XsT77GUeBK4" target="_blank" rel="noopener">https://www.youtube.com/watch?v=XsT77GUeBK4</a>
+                        </div>
+                        <a class="tgme_widget_message_link_preview" href="https://www.youtube.com/watch?v=XsT77GUeBK4">
+                            <i class="link_preview_right_image"
+                               style="background-image:url('https://cdn4.telesco.pe/file/jvJKofcGl-WBYaFme-0lObzid86DmM1ySV_vWozER66Vdy0919pYFNyoDdhjvsEWNdqX20W3oflGaPWngGG2XTC2YZVYBAuKifMY9wq6O4NTMQqio8rhkEC0_do2frqNL1L4Wh7B9eQ_vyU1OEDT5gr4aTO8KAlckX4r2Q-IyCSDaIJ-hrNCU4s_yEzA7Nrg2tMqf4fDgRnTMvpyatBCMipfVfWOLRTiFJ8Dpt8VGBi2JFZ191ZZNgHmEwUeY4TX6iBFZ3rf8bAHAGH3PydEJtgc3wXGV7bu8H848tG-kb5QfVtm4ye9mtBoeoJzNK8qYyIud26RZNi1iGlN58xHJA.jpg')"></i>
+                            <div class="link_preview_site_name accent_color" dir="auto">YouTube</div>
+
+                            <div class="link_preview_title" dir="auto">Первая RTS которая стала ХОРРОРОМ. Homeworld
+                                Cataclysm (Emergence)
+                            </div>
+                            <div class="link_preview_description" dir="auto">Поддержать выход подобных роликов -
+                                https://boosty.to/sanechkapretty<br/><br/>Катаклизм это одна из лучших
+                                научно-фантастических стратегий И я его очень люблю.<br/>Почта для сотрудничества:
+                                sanechkacollaboration@gmail.com<br/><br/>00:00 - Вступление<br/>03:03 - Завязка<br/>10:16
+                                -…
+                            </div>
+                        </a>
+                        <div class="tgme_widget_message_footer compact js-message_footer">
+
+                            <div class="tgme_widget_message_info short js-message_info">
+                                <span class="tgme_widget_message_views">11</span><span
+                                    class="copyonly"> views</span><span class="tgme_widget_message_meta"><a
+                                    class="tgme_widget_message_date" href="https://t.me/GameDevVideos/196"><time
+                                    datetime="2026-06-02T17:25:24+00:00" class="time">17:25</time></a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tgme_widget_message_wrap js-widget_message_wrap">
+                <div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="GameDevVideos/197"
+                     data-view="eyJjIjotMzkzNDg1MDk2NSwicCI6MTk3LCJ0IjoxNzgxMTA3NzI5LCJoIjoiZWNlOGU4MjRjMWFmZDk0ZTRmIn0">
+                    <div class="tgme_widget_message_user"><a href="https://t.me/GameDevVideos"><i
+                            class="tgme_widget_message_user_photo bgcolor3" data-content="G"><img
+                            src="https://cdn4.telesco.pe/file/hTWlRh-b9RaXopMvXcC_WOz-VubiTd10gD8uMhpxOlUr4a6KkxoMkmyc2fugmHQkf9dBmm_bSGch77gn8lyXVm6A3oXfJh2_kLEEXytl8rXjew8JPT8IK6ZFTy1Hzr9SwKZCbvSz_DBGAq4yhGv5lnSeoYNGBl0Dh5c5WCHCqRDi3AAlshQY3_COMif8CxhYdepxqnn-nxn0DZ94V608vBxfqVy25DtiMOSuQPM_S05-wF83PQC1i5lAnwsMzSVmyIl4d02yXJpziHzLSL-ATRnFN0Dmhi-4OwCjXG-WX5bPl2aXhDmimKiBd_0CMHIwb6K69m5y0WZHlhxvw9JrKA.jpg"></i></a>
+                    </div>
+                    <div class="tgme_widget_message_bubble">
+
+                        <i class="tgme_widget_message_bubble_tail">
+                            <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+                                <g fill="none">
+                                    <path class="background" fill="#ffffff"
+                                          d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+                                    <path class="border_1x" fill="#d7e3ec"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+                                    <path class="border_2x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+                                    <path class="border_3x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+                                </g>
+                            </svg>
+                        </i>
+                        <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name"
+                                                                                href="https://t.me/GameDevVideos"><span
+                                dir="auto">GDV</span></a></div>
+
+
+                        <div class="tgme_widget_message_text js-message_text" dir="auto"><a
+                                href="https://youtu.be/Ww8MzcBJUd4" target="_blank" rel="noopener">https://youtu.be/Ww8MzcBJUd4</a>
+                        </div>
+                        <a class="tgme_widget_message_link_preview" href="https://youtu.be/Ww8MzcBJUd4">
+                            <i class="link_preview_right_image"
+                               style="background-image:url('https://cdn4.telesco.pe/file/ZUSv0-aFrVWUmZiL0lS3COTGEvDf3Vglv6yk9YXr5eV7JwR5BckTGtLphBBM0CNFTp6sZPKxZk8FWrWGval6ViDcBY_sq-n8J3YAPn1_jzHx56x_oOQK-bWFhyfg0JLyqPVKFcY1cvMkgrFgYAwemZ2T_LssBdD2VcbFzi5LWqnLzILsuXg7ezrvuMcFGwQfXtd_yUFKZnjSTYLIiOqDxD683EX6dwspMOxGTaGuKOeYTXGHLPgWcw-RUTZ0VNdVS27TjPAaOdzrr2V1dTWlGaRQdnRiUtiz4MZsutQBfJcDRlqMrsg1QqQWRORRHbmNPzO0eyRqEI5tgKM1gV6oOw.jpg')"></i>
+                            <div class="link_preview_site_name accent_color" dir="auto">YouTube</div>
+
+                            <div class="link_preview_title" dir="auto">Как один программист уничтожил монополию
+                                корпораций на видео
+                            </div>
+                            <div class="link_preview_description" dir="auto">Это история FFmpeg. История программы, на
+                                которой держится вся гигантская видеоиндустрия — от YouTube и Netflix до TikTok. Она
+                                была создана в обычной парижской квартире, чтобы разрушить монополию корпораций на
+                                видео. И в этом видео мы погрузимся в историю…
+                            </div>
+                        </a>
+                        <div class="tgme_widget_message_footer compact js-message_footer">
+
+                            <div class="tgme_widget_message_info short js-message_info">
+                                <span class="tgme_widget_message_views">11</span><span
+                                    class="copyonly"> views</span><span class="tgme_widget_message_meta"><a
+                                    class="tgme_widget_message_date" href="https://t.me/GameDevVideos/197"><time
+                                    datetime="2026-06-03T13:26:04+00:00" class="time">13:26</time></a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tgme_widget_message_wrap js-widget_message_wrap">
+                <div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="GameDevVideos/198"
+                     data-view="eyJjIjotMzkzNDg1MDk2NSwicCI6MTk4LCJ0IjoxNzgxMTA3NzI5LCJoIjoiOGRmYTAyOTAxNDA4ODkzOWUwIn0">
+                    <div class="tgme_widget_message_user"><a href="https://t.me/GameDevVideos"><i
+                            class="tgme_widget_message_user_photo bgcolor3" data-content="G"><img
+                            src="https://cdn4.telesco.pe/file/hTWlRh-b9RaXopMvXcC_WOz-VubiTd10gD8uMhpxOlUr4a6KkxoMkmyc2fugmHQkf9dBmm_bSGch77gn8lyXVm6A3oXfJh2_kLEEXytl8rXjew8JPT8IK6ZFTy1Hzr9SwKZCbvSz_DBGAq4yhGv5lnSeoYNGBl0Dh5c5WCHCqRDi3AAlshQY3_COMif8CxhYdepxqnn-nxn0DZ94V608vBxfqVy25DtiMOSuQPM_S05-wF83PQC1i5lAnwsMzSVmyIl4d02yXJpziHzLSL-ATRnFN0Dmhi-4OwCjXG-WX5bPl2aXhDmimKiBd_0CMHIwb6K69m5y0WZHlhxvw9JrKA.jpg"></i></a>
+                    </div>
+                    <div class="tgme_widget_message_bubble">
+
+                        <i class="tgme_widget_message_bubble_tail">
+                            <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+                                <g fill="none">
+                                    <path class="background" fill="#ffffff"
+                                          d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+                                    <path class="border_1x" fill="#d7e3ec"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+                                    <path class="border_2x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+                                    <path class="border_3x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+                                </g>
+                            </svg>
+                        </i>
+                        <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name"
+                                                                                href="https://t.me/GameDevVideos"><span
+                                dir="auto">GDV</span></a></div>
+
+
+                        <div class="tgme_widget_message_text js-message_text" dir="auto"><a
+                                href="https://youtu.be/C02SFk2QRMw" target="_blank" rel="noopener">https://youtu.be/C02SFk2QRMw</a>
+                        </div>
+                        <a class="tgme_widget_message_link_preview" href="https://youtu.be/C02SFk2QRMw">
+                            <i class="link_preview_right_image"
+                               style="background-image:url('https://cdn4.telesco.pe/file/Kl1L40tcgvTiTdeHb_NrgM-L9ItquQBNPuiINEcBc7F4ZJOkjQ2tGoTLQuSPcm3N4NQTE75sgVyNKK1bUAgec7APe-hjrTZyEsGDXzxYmTLLbCYpaaAVyyQ9h0rxVPqDIx5cp4rVgQycolrKUv-X0LfNqAGt6n6Tedxczk01V5TscG3ZTCQm9TJMUkVcOWikg2uDM26yw9JKRFvJp9iq5QIiPR528BzuSxGlT3kYOxcL-zP9A39sWuDZsFXES8nRzNLf6zjkKv6uVZbFiOpFFAYBv5KuoH5HqhSd7SwxIkOObFevBpCX5sEHvdAy-E5gnrZH5XMNlqQqRK-qDsMDkA.jpg')"></i>
+                            <div class="link_preview_site_name accent_color" dir="auto">YouTube</div>
+
+                            <div class="link_preview_title" dir="auto">Как создать игру, чтобы не было мучительно больно
+                                — Лекция Bibamus — КИИ Минск 2026
+                            </div>
+                            <div class="link_preview_description" dir="auto">Продолжаем публиковать доклады с
+                                конференции «Игровая Индустрия», которая прошла весной в Минске. Сегодня у нас доклад от
+                                инди-студии Bibamus. Его прочел Андрей Попович, гейм-дизайнер студии.<br/><br/>Слайды к
+                                докладу:<br/><br/>К слову, следующая «Игровая Индустрия» — не…
+                            </div>
+                        </a>
+                        <div class="tgme_widget_message_footer compact js-message_footer">
+
+                            <div class="tgme_widget_message_info short js-message_info">
+                                <span class="tgme_widget_message_views">9</span><span
+                                    class="copyonly"> views</span><span class="tgme_widget_message_meta"><a
+                                    class="tgme_widget_message_date" href="https://t.me/GameDevVideos/198"><time
+                                    datetime="2026-06-04T13:57:00+00:00" class="time">13:57</time></a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tgme_widget_message_wrap js-widget_message_wrap">
+                <div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="GameDevVideos/199"
+                     data-view="eyJjIjotMzkzNDg1MDk2NSwicCI6MTk5LCJ0IjoxNzgxMTA3NzI5LCJoIjoiZDdlNDBiZTMwNjFmNTcyYTdhIn0">
+                    <div class="tgme_widget_message_user"><a href="https://t.me/GameDevVideos"><i
+                            class="tgme_widget_message_user_photo bgcolor3" data-content="G"><img
+                            src="https://cdn4.telesco.pe/file/hTWlRh-b9RaXopMvXcC_WOz-VubiTd10gD8uMhpxOlUr4a6KkxoMkmyc2fugmHQkf9dBmm_bSGch77gn8lyXVm6A3oXfJh2_kLEEXytl8rXjew8JPT8IK6ZFTy1Hzr9SwKZCbvSz_DBGAq4yhGv5lnSeoYNGBl0Dh5c5WCHCqRDi3AAlshQY3_COMif8CxhYdepxqnn-nxn0DZ94V608vBxfqVy25DtiMOSuQPM_S05-wF83PQC1i5lAnwsMzSVmyIl4d02yXJpziHzLSL-ATRnFN0Dmhi-4OwCjXG-WX5bPl2aXhDmimKiBd_0CMHIwb6K69m5y0WZHlhxvw9JrKA.jpg"></i></a>
+                    </div>
+                    <div class="tgme_widget_message_bubble">
+
+                        <i class="tgme_widget_message_bubble_tail">
+                            <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+                                <g fill="none">
+                                    <path class="background" fill="#ffffff"
+                                          d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+                                    <path class="border_1x" fill="#d7e3ec"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+                                    <path class="border_2x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+                                    <path class="border_3x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+                                </g>
+                            </svg>
+                        </i>
+                        <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name"
+                                                                                href="https://t.me/GameDevVideos"><span
+                                dir="auto">GDV</span></a></div>
+
+
+                        <div class="tgme_widget_message_text js-message_text" dir="auto">FEATURE CREEP, или ЧТО УБИВАЕТ
+                            ИГРЫ<br/><a href="https://www.youtube.com/watch?v=r8EOcwnj9_4" target="_blank"
+                                        rel="noopener">https://www.youtube.com/watch?v=r8EOcwnj9_4</a></div>
+                        <a class="tgme_widget_message_link_preview" href="https://www.youtube.com/watch?v=r8EOcwnj9_4">
+                            <i class="link_preview_right_image"
+                               style="background-image:url('https://cdn4.telesco.pe/file/Apo1juwZpFdmm8e4OUc6PbPnArcoRtoEBOic7ij2g0zpM2ZbG6yqJGJ458WHKwu9O2s0up_vN3jG9duBXMuc2c24Cbr8Xcv3FmjO3AAh1DHsPM7KrzjS3dvrRooePyWuQT5ylGoe-oJi_EAEdpufKBQWthMqOeZfLfYa8NFaPrt8VBh8fHysWev48kfK1Buvuozvy5K3AcBUupTH7F_R9XhxRgpsi2eX_wG0vSQG0Y5ZH63eEFfQLttqOKcmssqZH4ugYIYTL8cIq7B2_i8gtrjIK_ElYQl5WjoHbyatte7hgHL9tBHNrKmimQBlHrX5oD1chbFtwCSgzlWhdyJ4hA.jpg')"></i>
+                            <div class="link_preview_site_name accent_color" dir="auto">YouTube</div>
+
+                            <div class="link_preview_title" dir="auto">FEATURE CREEP, или ЧТО УБИВАЕТ ИГРЫ</div>
+                            <div class="link_preview_description" dir="auto"><i class="emoji"
+                                                                                style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤️</b></i>
+                                Моя ферма Silicone Heart:
+                                https://store.steampowered.com/app/3340880/Silicone_Heart/<br/><i class="emoji"
+                                                                                                  style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>
+                                Наш хит в Steam — Meltopia:
+                                https://store.steampowered.com/app/3601800/Meltopia/<br/><br/>Трейлеры обещают нам горы
+                                золота, живые миры и революционный геймплей, но на релизе…
+                            </div>
+                        </a>
+                        <div class="tgme_widget_message_footer compact js-message_footer">
+
+                            <div class="tgme_widget_message_info short js-message_info">
+                                <span class="tgme_widget_message_views">12</span><span
+                                    class="copyonly"> views</span><span class="tgme_widget_message_meta"><a
+                                    class="tgme_widget_message_date" href="https://t.me/GameDevVideos/199"><time
+                                    datetime="2026-06-04T14:45:06+00:00" class="time">14:45</time></a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tgme_widget_message_wrap js-widget_message_wrap">
+                <div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="GameDevVideos/201"
+                     data-view="eyJjIjotMzkzNDg1MDk2NSwicCI6MjAxLCJ0IjoxNzgxMTA3NzI5LCJoIjoiZWYzNzcyOTcyODFiNjhjNzE5In0">
+                    <div class="tgme_widget_message_user"><a href="https://t.me/GameDevVideos"><i
+                            class="tgme_widget_message_user_photo bgcolor3" data-content="G"><img
+                            src="https://cdn4.telesco.pe/file/hTWlRh-b9RaXopMvXcC_WOz-VubiTd10gD8uMhpxOlUr4a6KkxoMkmyc2fugmHQkf9dBmm_bSGch77gn8lyXVm6A3oXfJh2_kLEEXytl8rXjew8JPT8IK6ZFTy1Hzr9SwKZCbvSz_DBGAq4yhGv5lnSeoYNGBl0Dh5c5WCHCqRDi3AAlshQY3_COMif8CxhYdepxqnn-nxn0DZ94V608vBxfqVy25DtiMOSuQPM_S05-wF83PQC1i5lAnwsMzSVmyIl4d02yXJpziHzLSL-ATRnFN0Dmhi-4OwCjXG-WX5bPl2aXhDmimKiBd_0CMHIwb6K69m5y0WZHlhxvw9JrKA.jpg"></i></a>
+                    </div>
+                    <div class="tgme_widget_message_bubble">
+
+                        <i class="tgme_widget_message_bubble_tail">
+                            <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+                                <g fill="none">
+                                    <path class="background" fill="#ffffff"
+                                          d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+                                    <path class="border_1x" fill="#d7e3ec"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+                                    <path class="border_2x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+                                    <path class="border_3x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+                                </g>
+                            </svg>
+                        </i>
+                        <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name"
+                                                                                href="https://t.me/GameDevVideos"><span
+                                dir="auto">GDV</span></a></div>
+
+
+                        <div class="tgme_widget_message_text js-message_text" dir="auto">КАК НАЧАТЬ ДЕЛАТЬ ИГРЫ ОДНОМУ |
+                            РАЗРАБОТКА ДЛЯ НОВИЧКОВ<br/><a href="https://www.youtube.com/watch?v=Ka_PBTcN0Yk"
+                                                           target="_blank" rel="noopener">https://www.youtube.com/watch?v=Ka_PBTcN0Yk</a>
+                        </div>
+                        <a class="tgme_widget_message_link_preview" href="https://www.youtube.com/watch?v=Ka_PBTcN0Yk">
+                            <i class="link_preview_right_image"
+                               style="background-image:url('https://cdn4.telesco.pe/file/RXiyOC-wUcRMAJtqxICAMyrGnXcDVp7OkOs3kVoU4dYykNPN8NnFBhCPHz--4sVSSKKFNG_SOjCWJg6O3dHQQ59qa2WYtvmbKuQb1xwEAnZfgY6KXQKpPv9Je5XamahdJxT-Dt86wbxhMJYhDht-YNupBR7ryQ4PsB3GlDRx_uaYVLYembNINzzDyu3yMPrOF6cCRMbG5tKWukv1tkkt_bjWEXAyD6RqW-34x8lCSGmOTa7Q_Qruiszt-g2HVZFXVR9fNLWQIkDYt1WBVIxUbhgk39JRIx0Q67oWmRiTtC1Iq-MI6uSkdqmhX5vRBNnIoIb-GjiHsFIUwVCdd9T61Q.jpg')"></i>
+                            <div class="link_preview_site_name accent_color" dir="auto">YouTube</div>
+
+                            <div class="link_preview_title" dir="auto">КАК НАЧАТЬ ДЕЛАТЬ ИГРЫ ОДНОМУ | РАЗРАБОТКА ДЛЯ
+                                НОВИЧКОВ
+                            </div>
+                            <div class="link_preview_description" dir="auto">Создание игр. Разработка игр. Как начать
+                                делать игры. Как сделать игру. Как стать разработчиком. С чего начать делать игры. Курсы
+                                по программированию. Геймдев. КАК НАЧАТЬ ДЕЛАТЬ ИГРЫ ОДНОМУ | РАЗРАБОТКА ДЛЯ
+                                НОВИЧКОВ<br/><br/>Стильно поясняю как быстро выучить программирование…
+                            </div>
+                        </a>
+                        <div class="tgme_widget_message_footer compact js-message_footer">
+
+                            <div class="tgme_widget_message_info short js-message_info">
+                                <span class="tgme_widget_message_views">10</span><span
+                                    class="copyonly"> views</span><span class="tgme_widget_message_meta"><a
+                                    class="tgme_widget_message_date" href="https://t.me/GameDevVideos/201"><time
+                                    datetime="2026-06-05T04:17:22+00:00" class="time">04:17</time></a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tgme_widget_message_wrap js-widget_message_wrap">
+                <div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="GameDevVideos/203"
+                     data-view="eyJjIjotMzkzNDg1MDk2NSwicCI6MjAzLCJ0IjoxNzgxMTA3NzI5LCJoIjoiOGUzMWI3Y2IzZTA1ZjEyZTM3In0">
+                    <div class="tgme_widget_message_user"><a href="https://t.me/GameDevVideos"><i
+                            class="tgme_widget_message_user_photo bgcolor3" data-content="G"><img
+                            src="https://cdn4.telesco.pe/file/hTWlRh-b9RaXopMvXcC_WOz-VubiTd10gD8uMhpxOlUr4a6KkxoMkmyc2fugmHQkf9dBmm_bSGch77gn8lyXVm6A3oXfJh2_kLEEXytl8rXjew8JPT8IK6ZFTy1Hzr9SwKZCbvSz_DBGAq4yhGv5lnSeoYNGBl0Dh5c5WCHCqRDi3AAlshQY3_COMif8CxhYdepxqnn-nxn0DZ94V608vBxfqVy25DtiMOSuQPM_S05-wF83PQC1i5lAnwsMzSVmyIl4d02yXJpziHzLSL-ATRnFN0Dmhi-4OwCjXG-WX5bPl2aXhDmimKiBd_0CMHIwb6K69m5y0WZHlhxvw9JrKA.jpg"></i></a>
+                    </div>
+                    <div class="tgme_widget_message_bubble">
+
+                        <i class="tgme_widget_message_bubble_tail">
+                            <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+                                <g fill="none">
+                                    <path class="background" fill="#ffffff"
+                                          d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+                                    <path class="border_1x" fill="#d7e3ec"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+                                    <path class="border_2x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+                                    <path class="border_3x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+                                </g>
+                            </svg>
+                        </i>
+                        <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name"
+                                                                                href="https://t.me/GameDevVideos"><span
+                                dir="auto">GDV</span></a></div>
+
+
+                        <div class="tgme_widget_message_text js-message_text" dir="auto"><a
+                                href="https://youtu.be/64VcY4xZNFo" target="_blank" rel="noopener">https://youtu.be/64VcY4xZNFo</a>
+                        </div>
+                        <a class="tgme_widget_message_link_preview" href="https://youtu.be/64VcY4xZNFo">
+                            <i class="link_preview_right_image"
+                               style="background-image:url('https://cdn4.telesco.pe/file/ZAorW4R4EE9GKeY3OwTSFiNz48EIYOypBV6AmNsijxwEhsbrxP8fFB9NSB6dlYsCzLj0xA2mQcz5yEZbbrfE6ztzbeilvQrHCGLTsfwMTKFZtrjLjLDKIj10F7nt4i8qNkaOQf6fy2Q0XGqlFli_RD8jKpvfLQG2wgJ1H6JKV4ZVSEMDEmX0DtTXvyKnBswgyF6rcWqt_lqRxjm-jIEYAYgpg6v42nIksEfksQk2-G11Qx8wSOkO-d5p3o0dBrAAjNZiosW3WvUCZ10Js8oS_L5y9qW5dlE6WKVTH4PkRaCOgLZ9yRnz9Qe8y1Ul9Tbv3MLhZMKlgEpSUBklzupxGA.jpg')"></i>
+                            <div class="link_preview_site_name accent_color" dir="auto">YouTube</div>
+
+                            <div class="link_preview_title" dir="auto">ЧЕГО ВЫ НЕ ЗНАЕТЕ ПРО ПИРАТСТВО И ТОРРЕНТЫ?</div>
+                            <div class="link_preview_description" dir="auto">Сегодня расскажем вам всё о цифровом
+                                пиратстве и торренте&#33;<br/><br/><i class="emoji"
+                                                                      style="background-image:url('//telegram.org/img/emoji/40/F09F92AA.png')"><b>💪</b></i>
+                                Участвуй в розыгрыше техники Apple от Durev VPN. Для этого просто оформи подписку от 1
+                                месяца и более до 14 июня&#33;<br/><br/><i class="emoji"
+                                                                           style="background-image:url('//telegram.org/img/emoji/40/F09FA496.png')"><b>🤖</b></i>
+                                Запустить через Telegram: https://bit.ly/DUREV_VPN<br/><i class="emoji"
+                                                                                          style="background-image:url('//telegram.org/img/emoji/40/F09F8C8D.png')"><b>🌍</b></i>
+                                Подключить на сайте: h…
+                            </div>
+                        </a>
+                        <div class="tgme_widget_message_footer compact js-message_footer">
+
+                            <div class="tgme_widget_message_info short js-message_info">
+                                <span class="tgme_widget_message_views">8</span><span
+                                    class="copyonly"> views</span><span class="tgme_widget_message_meta"><a
+                                    class="tgme_widget_message_date" href="https://t.me/GameDevVideos/203"><time
+                                    datetime="2026-06-05T23:06:45+00:00" class="time">23:06</time></a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tgme_widget_message_wrap js-widget_message_wrap">
+                <div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="GameDevVideos/204"
+                     data-view="eyJjIjotMzkzNDg1MDk2NSwicCI6MjA0LCJ0IjoxNzgxMTA3NzI5LCJoIjoiOGVkYjg5Y2E1ZGM3MGJkZDgyIn0">
+                    <div class="tgme_widget_message_user"><a href="https://t.me/GameDevVideos"><i
+                            class="tgme_widget_message_user_photo bgcolor3" data-content="G"><img
+                            src="https://cdn4.telesco.pe/file/hTWlRh-b9RaXopMvXcC_WOz-VubiTd10gD8uMhpxOlUr4a6KkxoMkmyc2fugmHQkf9dBmm_bSGch77gn8lyXVm6A3oXfJh2_kLEEXytl8rXjew8JPT8IK6ZFTy1Hzr9SwKZCbvSz_DBGAq4yhGv5lnSeoYNGBl0Dh5c5WCHCqRDi3AAlshQY3_COMif8CxhYdepxqnn-nxn0DZ94V608vBxfqVy25DtiMOSuQPM_S05-wF83PQC1i5lAnwsMzSVmyIl4d02yXJpziHzLSL-ATRnFN0Dmhi-4OwCjXG-WX5bPl2aXhDmimKiBd_0CMHIwb6K69m5y0WZHlhxvw9JrKA.jpg"></i></a>
+                    </div>
+                    <div class="tgme_widget_message_bubble">
+
+                        <i class="tgme_widget_message_bubble_tail">
+                            <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+                                <g fill="none">
+                                    <path class="background" fill="#ffffff"
+                                          d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+                                    <path class="border_1x" fill="#d7e3ec"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+                                    <path class="border_2x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+                                    <path class="border_3x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+                                </g>
+                            </svg>
+                        </i>
+                        <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name"
+                                                                                href="https://t.me/GameDevVideos"><span
+                                dir="auto">GDV</span></a></div>
+
+
+                        <div class="tgme_widget_message_text js-message_text" dir="auto">ЖДАЛ ЭТО 7 ЛЕТ&#33; Обзор
+                            Gothic Remake<br/><a href="https://www.youtube.com/watch?v=n4HyDzHLQUA" target="_blank"
+                                                 rel="noopener">https://www.youtube.com/watch?v=n4HyDzHLQUA</a></div>
+                        <a class="tgme_widget_message_link_preview" href="https://www.youtube.com/watch?v=n4HyDzHLQUA">
+                            <i class="link_preview_right_image"
+                               style="background-image:url('https://cdn4.telesco.pe/file/lEpQx_xQKqNwrClSInJLlENple-K0AcDm5SMeEXm8DC1krLY0VZzopQtGIq_ztlOsHdcEulmEz5U2pjwDXhraEKGKfPPYR5pWLqf-3HsVNkEjMfWZJjIi0aBwVs1ZpzQd5eLE0_VmStGFa6HCi6aVL29Q0WA-WKNUynzOlHpLFpbkDFJFEalHRr9x6Dsqfq6nLFxVbXv7nOQTXFSEmaLIqyoj2JSxuzsJttKHpwN992NaKLMHwk-ihFHeYwi7WTyJKB1-fZsh2wI7fjhq8l5GCGNfyNcVseYRK2ldiDILf_vL2ljjAHXD_ASO516bvGU5BefPgnsuuBOfm3ekQ1Slg.jpg')"></i>
+                            <div class="link_preview_site_name accent_color" dir="auto">YouTube</div>
+
+                            <div class="link_preview_title" dir="auto">ЖДАЛ ЭТО 7 ЛЕТ&#33; Обзор Gothic Remake</div>
+                            <div class="link_preview_description" dir="auto"><i class="emoji"
+                                                                                style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>Покупай
+                                в PlayStation Store с максимальной выгодой: https://tkstoreee.ru/snk<br/>Промокод:
+                                SONNYK<br/><br/>Телеграм - https://t.me/sonnyk1997<br/>Моя группа в ВК, смело
+                                подписывайся - https://vk.com/sonnyk1997<br/>Мой инстаграм -
+                                https://www.instagram.com/stanislavsonny/<br/>Мой…
+                            </div>
+                        </a>
+                        <div class="tgme_widget_message_footer compact js-message_footer">
+
+                            <div class="tgme_widget_message_info short js-message_info">
+                                <span class="tgme_widget_message_views">9</span><span
+                                    class="copyonly"> views</span><span class="tgme_widget_message_meta"><a
+                                    class="tgme_widget_message_date" href="https://t.me/GameDevVideos/204"><time
+                                    datetime="2026-06-06T13:28:25+00:00" class="time">13:28</time></a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tgme_widget_message_wrap js-widget_message_wrap">
+                <div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="GameDevVideos/205"
+                     data-view="eyJjIjotMzkzNDg1MDk2NSwicCI6MjA1LCJ0IjoxNzgxMTA3NzI5LCJoIjoiYjhhNzE2ZjA0NzdkZDYzY2RhIn0">
+                    <div class="tgme_widget_message_user"><a href="https://t.me/GameDevVideos"><i
+                            class="tgme_widget_message_user_photo bgcolor3" data-content="G"><img
+                            src="https://cdn4.telesco.pe/file/hTWlRh-b9RaXopMvXcC_WOz-VubiTd10gD8uMhpxOlUr4a6KkxoMkmyc2fugmHQkf9dBmm_bSGch77gn8lyXVm6A3oXfJh2_kLEEXytl8rXjew8JPT8IK6ZFTy1Hzr9SwKZCbvSz_DBGAq4yhGv5lnSeoYNGBl0Dh5c5WCHCqRDi3AAlshQY3_COMif8CxhYdepxqnn-nxn0DZ94V608vBxfqVy25DtiMOSuQPM_S05-wF83PQC1i5lAnwsMzSVmyIl4d02yXJpziHzLSL-ATRnFN0Dmhi-4OwCjXG-WX5bPl2aXhDmimKiBd_0CMHIwb6K69m5y0WZHlhxvw9JrKA.jpg"></i></a>
+                    </div>
+                    <div class="tgme_widget_message_bubble">
+
+                        <i class="tgme_widget_message_bubble_tail">
+                            <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+                                <g fill="none">
+                                    <path class="background" fill="#ffffff"
+                                          d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+                                    <path class="border_1x" fill="#d7e3ec"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+                                    <path class="border_2x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+                                    <path class="border_3x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+                                </g>
+                            </svg>
+                        </i>
+                        <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name"
+                                                                                href="https://t.me/GameDevVideos"><span
+                                dir="auto">GDV</span></a></div>
+
+
+                        <div class="tgme_widget_message_text js-message_text" dir="auto"><a
+                                href="https://youtu.be/h3uHqZvQYcc" target="_blank" rel="noopener">https://youtu.be/h3uHqZvQYcc</a>
+                        </div>
+                        <a class="tgme_widget_message_link_preview" href="https://youtu.be/h3uHqZvQYcc">
+                            <i class="link_preview_right_image"
+                               style="background-image:url('https://cdn4.telesco.pe/file/YP4f-fYS7RdvNXr0MyTsUrf8X7fmQE7XMxUIfk_ryGEEKvztK3LVeG6xYDK6FChU0aoRYIKSzYegeQF-6LZGGKzP-KIKsVrNYXffN1ASA2D3JXlKY_9NiN6hQ49hm28K11eq6njkIFRG3yZkc_-o0HkA409qG10TrFOtzohqP2JDF2IxZSh3EGVo3gsvLtWOQupHG1DLKWvrHEf5EUmbk9RJsZi3mxfHpcxl73G6ViOemEzQ3wF6kSMSaTn9c3YUaL0JtTOvgbIAmtNEdbEaHGa0c8ofj4WBMDLfQ-RfXhdnd8IPeP7xHIErSRpt7iGuuMLifu55fFE8FBxy3k1gTw.jpg')"></i>
+                            <div class="link_preview_site_name accent_color" dir="auto">YouTube</div>
+
+                            <div class="link_preview_title" dir="auto">КАК ИЗ РФ ВЫГОНЯЮТ РАЗРАБОТЧИКОВ ИГР</div>
+                            <div class="link_preview_description" dir="auto">РКН нашел новый способ заработка, контора
+                                начала в последнее время активно штрафовать игровых разработчиков за неправильную работу
+                                с данными геймеров из РФ. Еще одна распространенная претензия к игроделам — отказ
+                                сливать переписки игроков. Рассказываю об…
+                            </div>
+                        </a>
+                        <div class="tgme_widget_message_footer compact js-message_footer">
+
+                            <div class="tgme_widget_message_info short js-message_info">
+                                <span class="tgme_widget_message_views">8</span><span
+                                    class="copyonly"> views</span><span class="tgme_widget_message_meta"><a
+                                    class="tgme_widget_message_date" href="https://t.me/GameDevVideos/205"><time
+                                    datetime="2026-06-07T00:38:25+00:00" class="time">00:38</time></a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tgme_widget_message_wrap js-widget_message_wrap">
+                <div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="GameDevVideos/206"
+                     data-view="eyJjIjotMzkzNDg1MDk2NSwicCI6MjA2LCJ0IjoxNzgxMTA3NzI5LCJoIjoiN2MzNDBiMGFlNGY2ZDRlMGQ2In0">
+                    <div class="tgme_widget_message_user"><a href="https://t.me/GameDevVideos"><i
+                            class="tgme_widget_message_user_photo bgcolor3" data-content="G"><img
+                            src="https://cdn4.telesco.pe/file/hTWlRh-b9RaXopMvXcC_WOz-VubiTd10gD8uMhpxOlUr4a6KkxoMkmyc2fugmHQkf9dBmm_bSGch77gn8lyXVm6A3oXfJh2_kLEEXytl8rXjew8JPT8IK6ZFTy1Hzr9SwKZCbvSz_DBGAq4yhGv5lnSeoYNGBl0Dh5c5WCHCqRDi3AAlshQY3_COMif8CxhYdepxqnn-nxn0DZ94V608vBxfqVy25DtiMOSuQPM_S05-wF83PQC1i5lAnwsMzSVmyIl4d02yXJpziHzLSL-ATRnFN0Dmhi-4OwCjXG-WX5bPl2aXhDmimKiBd_0CMHIwb6K69m5y0WZHlhxvw9JrKA.jpg"></i></a>
+                    </div>
+                    <div class="tgme_widget_message_bubble">
+
+                        <i class="tgme_widget_message_bubble_tail">
+                            <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+                                <g fill="none">
+                                    <path class="background" fill="#ffffff"
+                                          d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+                                    <path class="border_1x" fill="#d7e3ec"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+                                    <path class="border_2x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+                                    <path class="border_3x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+                                </g>
+                            </svg>
+                        </i>
+                        <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name"
+                                                                                href="https://t.me/GameDevVideos"><span
+                                dir="auto">GDV</span></a></div>
+
+
+                        <div class="tgme_widget_message_text js-message_text" dir="auto">Дед базу выдает)<br/><a
+                                href="https://youtu.be/3nFbB_KK5KA" target="_blank" rel="noopener">https://youtu.be/3nFbB_KK5KA</a>
+                        </div>
+                        <a class="tgme_widget_message_link_preview" href="https://youtu.be/3nFbB_KK5KA">
+                            <i class="link_preview_right_image"
+                               style="background-image:url('https://cdn4.telesco.pe/file/BrANI6FuMEFNdhGbVuSl-ZpMh4l6-jkfEBIMxkWL2FnfCLzE0Ur0nv3vqHx5sRHsoRwYjB7PQptxdUSBOVcIxaemEe9QbwA1Wfd0I9y9pTnEiFLXjycFL8fuV4tbWvXg7dqRMI4_Vzk8k4EMp2KX26cAARjOniGRVMxzCPx8pPjzhGPxuzTmo0wBb8m-38PG18IlrcimgTbrq6EqtWHlqDnt4LGbynl1Elc3cVNHSnwDGc_H3zRaSlYxvw-FfgVgb4IFrw6k52-m6mQQujLWUjPJ7f07k0RaptSVeEbjUv0ngPvj6MKJ0MJC_sd-CiW74ic2KHrrELvSgYDhhqIVTA.jpg')"></i>
+                            <div class="link_preview_site_name accent_color" dir="auto">YouTube</div>
+
+                            <div class="link_preview_title" dir="auto">Думай как инженер: база, чтобы стать
+                                разработчиком | Talklog#4
+                            </div>
+                            <div class="link_preview_description" dir="auto">Talklog #4: БАЗА, чтобы стать
+                                разработчиком: думай как инженер<br/><br/>Английский канал-дублёр:<br/>https://www.youtube.com/@Honey_Badger_Channel<br/><br/>Telegram:<br/>https://t.me/+GGYSbR3ARSoxNTQ0<br/><br/>Facebook:<br/>https://www.facebook.com/groups/ded.medoed.sandbox<br/><br/>LinkedIn:<br/>http…
+                            </div>
+                        </a>
+                        <div class="tgme_widget_message_footer compact js-message_footer">
+
+                            <div class="tgme_widget_message_info short js-message_info">
+                                <span class="tgme_widget_message_views">8</span><span
+                                    class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a
+                                    class="tgme_widget_message_date" href="https://t.me/GameDevVideos/206"><time
+                                    datetime="2026-06-07T00:50:59+00:00" class="time">00:50</time></a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tgme_widget_message_wrap js-widget_message_wrap">
+                <div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="GameDevVideos/208"
+                     data-view="eyJjIjotMzkzNDg1MDk2NSwicCI6MjA4LCJ0IjoxNzgxMTA3NzI5LCJoIjoiZjcxN2U1ZWM1MTY0Nzc1OTczIn0">
+                    <div class="tgme_widget_message_user"><a href="https://t.me/GameDevVideos"><i
+                            class="tgme_widget_message_user_photo bgcolor3" data-content="G"><img
+                            src="https://cdn4.telesco.pe/file/hTWlRh-b9RaXopMvXcC_WOz-VubiTd10gD8uMhpxOlUr4a6KkxoMkmyc2fugmHQkf9dBmm_bSGch77gn8lyXVm6A3oXfJh2_kLEEXytl8rXjew8JPT8IK6ZFTy1Hzr9SwKZCbvSz_DBGAq4yhGv5lnSeoYNGBl0Dh5c5WCHCqRDi3AAlshQY3_COMif8CxhYdepxqnn-nxn0DZ94V608vBxfqVy25DtiMOSuQPM_S05-wF83PQC1i5lAnwsMzSVmyIl4d02yXJpziHzLSL-ATRnFN0Dmhi-4OwCjXG-WX5bPl2aXhDmimKiBd_0CMHIwb6K69m5y0WZHlhxvw9JrKA.jpg"></i></a>
+                    </div>
+                    <div class="tgme_widget_message_bubble">
+
+                        <i class="tgme_widget_message_bubble_tail">
+                            <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+                                <g fill="none">
+                                    <path class="background" fill="#ffffff"
+                                          d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+                                    <path class="border_1x" fill="#d7e3ec"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+                                    <path class="border_2x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+                                    <path class="border_3x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+                                </g>
+                            </svg>
+                        </i>
+                        <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name"
+                                                                                href="https://t.me/GameDevVideos"><span
+                                dir="auto">GDV</span></a></div>
+
+
+                        <div class="tgme_widget_message_text js-message_text" dir="auto"><a
+                                href="https://youtu.be/nn1xdfRjj5k" target="_blank" rel="noopener">https://youtu.be/nn1xdfRjj5k</a>
+                        </div>
+                        <a class="tgme_widget_message_link_preview" href="https://youtu.be/nn1xdfRjj5k">
+                            <i class="link_preview_right_image"
+                               style="background-image:url('https://cdn4.telesco.pe/file/QvZbysR23jRxnCjTy9_teuENyEmbbpYnkmVtIApTmNZjRFsjG2_aPuHVyFkpQxDeGbFDxAW5YzmtMpOzjwRlsVGc3NOJYh_7piwW7_OnvNLyu5RDbaV3-OGSoN35NyiG2QZReV9UVc8kRQpfi0c8CVai5iI8J_cNqCvMfE1oOfZsCoiw6WYy9xTJ-BU0F74LvmpowhvxHfgEAOUrLLrin7STcOSJs9Oa-9a1IlUiVmsIbBgxujBkIvvOvqLf-MdjaDrw4MIgOmhPlry6TrE-yEwFF-Sl5WKb0tPbqbe2xB4FBCWnwmrsfxajFuHVSZOeUCL8GKMg-4bU9uHrAlqKvQ.jpg')"></i>
+                            <div class="link_preview_site_name accent_color" dir="auto">YouTube</div>
+
+                            <div class="link_preview_title" dir="auto">Вам ВРАЛИ про умных NPC в играх</div>
+                            <div class="link_preview_description" dir="auto">Вы правда верите, что кузнец в любимой RPG
+                                живет своей жизнью, а враги выстраивают сложную тактику? Вас обманывают. В этом видео мы
+                                разберем главный фокус геймдева — искусственный интеллект NPC. От костылей Pac-Man до
+                                иллюзии жизни в Alien: Isolation и X4…
+                            </div>
+                        </a>
+                        <div class="tgme_widget_message_footer compact js-message_footer">
+
+                            <div class="tgme_widget_message_info short js-message_info">
+                                <span class="tgme_widget_message_views">7</span><span
+                                    class="copyonly"> views</span><span class="tgme_widget_message_meta"><a
+                                    class="tgme_widget_message_date" href="https://t.me/GameDevVideos/208"><time
+                                    datetime="2026-06-07T17:43:31+00:00" class="time">17:43</time></a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tgme_widget_message_wrap js-widget_message_wrap">
+                <div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="GameDevVideos/210"
+                     data-view="eyJjIjotMzkzNDg1MDk2NSwicCI6MjEwLCJ0IjoxNzgxMTA3NzI5LCJoIjoiMzk0OGI4YzkwMjYzYmY2MWZmIn0">
+                    <div class="tgme_widget_message_user"><a href="https://t.me/GameDevVideos"><i
+                            class="tgme_widget_message_user_photo bgcolor3" data-content="G"><img
+                            src="https://cdn4.telesco.pe/file/hTWlRh-b9RaXopMvXcC_WOz-VubiTd10gD8uMhpxOlUr4a6KkxoMkmyc2fugmHQkf9dBmm_bSGch77gn8lyXVm6A3oXfJh2_kLEEXytl8rXjew8JPT8IK6ZFTy1Hzr9SwKZCbvSz_DBGAq4yhGv5lnSeoYNGBl0Dh5c5WCHCqRDi3AAlshQY3_COMif8CxhYdepxqnn-nxn0DZ94V608vBxfqVy25DtiMOSuQPM_S05-wF83PQC1i5lAnwsMzSVmyIl4d02yXJpziHzLSL-ATRnFN0Dmhi-4OwCjXG-WX5bPl2aXhDmimKiBd_0CMHIwb6K69m5y0WZHlhxvw9JrKA.jpg"></i></a>
+                    </div>
+                    <div class="tgme_widget_message_bubble">
+
+                        <i class="tgme_widget_message_bubble_tail">
+                            <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+                                <g fill="none">
+                                    <path class="background" fill="#ffffff"
+                                          d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+                                    <path class="border_1x" fill="#d7e3ec"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+                                    <path class="border_2x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+                                    <path class="border_3x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+                                </g>
+                            </svg>
+                        </i>
+                        <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name"
+                                                                                href="https://t.me/GameDevVideos"><span
+                                dir="auto">GDV</span></a></div>
+
+
+                        <div class="tgme_widget_message_text js-message_text" dir="auto"><a
+                                href="https://youtu.be/JIOGfVquDl0" target="_blank" rel="noopener">https://youtu.be/JIOGfVquDl0</a>
+                        </div>
+                        <a class="tgme_widget_message_link_preview" href="https://youtu.be/JIOGfVquDl0">
+                            <i class="link_preview_right_image"
+                               style="background-image:url('https://cdn4.telesco.pe/file/XIgw8hb_yWwrGQXCFzzfR09COUlW74yykuXlKe_VBQ6B_q2JJ7pO8QtvWeMJs7HQpFnIDr7ZBpkbKI4rdgp9EujGFkR0NMMDdSgyursspIdHEEbhI3i07rJidf1UJg-ccVsBsoMYl0troR8sK1LYfFeSEayKKh4UYr2y0ZQRTDo71Pdv7JxBfNuK-hyrV3fe4F0H8nBaznoYFhTMtK5h_Y-QNIkWvf93vKIHc_CDqfAKenPdobMAM5fNV0bfN4oTcwYnH-AzSBKIYwEzwaVSCOBYPaxOPvnLT7w-sicVXZffF_9NpLpzjUWQji-xZ8ioDVvoSI_CzrPCKbGlIgOfVw.jpg')"></i>
+                            <div class="link_preview_site_name accent_color" dir="auto">YouTube</div>
+
+                            <div class="link_preview_title" dir="auto">ИИгры: нейросети в компьютерных забавах</div>
+                            <div class="link_preview_description" dir="auto">Нейросети АХ*?ЕЛИ .<br/><br/>В этом видео я
+                                решил проверить, как нейросети чувствуют себя в геймдеве прямо сейчас.<br/>— AI2U:
+                                симулятор общения с безумной виртуальной тяночкой, которая держит тебя в плену<br/>—
+                                Minecraft-мод с «живыми» ИИ-игроками, которые якобы умеют выживать…
+                            </div>
+                        </a>
+                        <div class="tgme_widget_message_footer compact js-message_footer">
+
+                            <div class="tgme_widget_message_info short js-message_info">
+                                <span class="tgme_widget_message_views">7</span><span
+                                    class="copyonly"> views</span><span class="tgme_widget_message_meta"><a
+                                    class="tgme_widget_message_date" href="https://t.me/GameDevVideos/210"><time
+                                    datetime="2026-06-08T22:53:08+00:00" class="time">22:53</time></a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tgme_widget_message_wrap js-widget_message_wrap">
+                <div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="GameDevVideos/211"
+                     data-view="eyJjIjotMzkzNDg1MDk2NSwicCI6MjExLCJ0IjoxNzgxMTA3NzI5LCJoIjoiNzI4ZWNjOGJhYmYxMDQ4YzdjIn0">
+                    <div class="tgme_widget_message_user"><a href="https://t.me/GameDevVideos"><i
+                            class="tgme_widget_message_user_photo bgcolor3" data-content="G"><img
+                            src="https://cdn4.telesco.pe/file/hTWlRh-b9RaXopMvXcC_WOz-VubiTd10gD8uMhpxOlUr4a6KkxoMkmyc2fugmHQkf9dBmm_bSGch77gn8lyXVm6A3oXfJh2_kLEEXytl8rXjew8JPT8IK6ZFTy1Hzr9SwKZCbvSz_DBGAq4yhGv5lnSeoYNGBl0Dh5c5WCHCqRDi3AAlshQY3_COMif8CxhYdepxqnn-nxn0DZ94V608vBxfqVy25DtiMOSuQPM_S05-wF83PQC1i5lAnwsMzSVmyIl4d02yXJpziHzLSL-ATRnFN0Dmhi-4OwCjXG-WX5bPl2aXhDmimKiBd_0CMHIwb6K69m5y0WZHlhxvw9JrKA.jpg"></i></a>
+                    </div>
+                    <div class="tgme_widget_message_bubble">
+
+                        <i class="tgme_widget_message_bubble_tail">
+                            <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+                                <g fill="none">
+                                    <path class="background" fill="#ffffff"
+                                          d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+                                    <path class="border_1x" fill="#d7e3ec"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+                                    <path class="border_2x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+                                    <path class="border_3x"
+                                          d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+                                </g>
+                            </svg>
+                        </i>
+                        <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name"
+                                                                                href="https://t.me/GameDevVideos"><span
+                                dir="auto">GDV</span></a></div>
+
+
+                        <div class="tgme_widget_message_text js-message_text" dir="auto"><a
+                                href="https://youtu.be/7AQjWI3lBec" target="_blank" rel="noopener">https://youtu.be/7AQjWI3lBec</a>
+                        </div>
+                        <a class="tgme_widget_message_link_preview" href="https://youtu.be/7AQjWI3lBec">
+                            <i class="link_preview_right_image"
+                               style="background-image:url('https://cdn4.telesco.pe/file/kuUIue9AVJBHCD5Ke3hNMWWmSe_5FcKhA2v_0hRujWBqBOGlu5bihkpTyFx92R9OcD6WCVJaE3eIhpv80b26W7FklkoFiyRlZIn91RJ4Ua2-0CuZ6FGRJmgLChltmqt78iHDJs5WcTlnsSs2DV68-XJ770R6u2XxsyzvGPiQolvpb5LyHR01HqjhXGjQDZyDIVMEBhq6Pl2-nvJK6K_O7C5bAQZmD6085aFf_oxE1lQMm7I5E7dGnK3_Ay3Sg98unG5qHvpttj1PuAuA7QeHkv1Ll5SFlsgwHZ4jyLV6-3ZUn5dKdNVwTWaxgdBwuRzNX7REQiACoeNwz5JSZ719Cw.jpg')"></i>
+                            <div class="link_preview_site_name accent_color" dir="auto">YouTube</div>
+
+                            <div class="link_preview_title" dir="auto">Халтура вместо некстгена&#33; Почему индустрия
+                                перестала делать игры?
+                            </div>
+                            <div class="link_preview_description" dir="auto">Поддержать автора монетой <i class="emoji"
+                                                                                                          style="background-image:url('//telegram.org/img/emoji/40/F09FA4B2.png')"><b>🤲</b></i>
+                                <br/>https://boosty.to/thevitasmanofficial<br/>https://www.donationalerts.com/r/thevitasman<br/><br/>Тайминги:<br/>00:00
+                                - Почему игры скатились?<br/>10:20 - Чистый и не прикрытый капитализм&#33; <br/>11:20 -
+                                Золотая Эра геймдева. <br/>20:46 - Суть игровой индустрии.…
+                            </div>
+                        </a>
+                        <div class="tgme_widget_message_footer compact js-message_footer">
+
+                            <div class="tgme_widget_message_info short js-message_info">
+                                <span class="tgme_widget_message_views">2</span><span
+                                    class="copyonly"> views</span><span class="tgme_widget_message_meta"><a
+                                    class="tgme_widget_message_date" href="https://t.me/GameDevVideos/211"><time
+                                    datetime="2026-06-10T15:39:29+00:00" class="time">15:39</time></a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+<script src="//telegram.org/js/jquery.min.js"></script>
+<script src="//telegram.org/js/jquery-ui.min.js"></script>
+<script src="//telegram.org/js/tgwallpaper.min.js?3"></script>
+<script src="//telegram.org/js/tgsticker.js?31"></script>
+
+<script src="//telegram.org/js/widget-frame.js?66"></script>
+<script src="//telegram.org/js/telegram-web.js?14"></script>
+<script>TWeb.init();
+</script>
+
+</body>
+</html>
+<!-- page generated in 222.45ms -->
