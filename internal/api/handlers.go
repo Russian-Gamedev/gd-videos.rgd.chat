@@ -54,7 +54,7 @@ func RegisterRoutes(root *router.Router[*core.RequestEvent]) {
 		records, err := e.App.FindRecordsByFilter(
 			"messages",
 			"channel={:channel} && deleted=false",
-			"+post_id",
+			"-post_id",
 			perPage,
 			offset,
 			dbx.Params{"channel": channel.Id},
