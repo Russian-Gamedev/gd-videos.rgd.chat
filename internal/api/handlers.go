@@ -66,8 +66,8 @@ func RegisterRoutes(root *router.Router[*core.RequestEvent]) {
 		type messageItem struct {
 			Id       int64             `json:"id"`
 			Text     *string           `json:"text,omitempty"`
-			Links    []string          `json:"links"`
-			Media    []json.RawMessage `json:"media"`
+			Links    []string          `json:"links,omitempty"`
+			Media    []json.RawMessage `json:"media,omitempty"`
 			Views    int64             `json:"views"`
 			Datetime string            `json:"datetime"`
 			Edited   bool              `json:"edited"`
