@@ -1,3 +1,4 @@
 *.exe
 pb_data/
 .idea/
+.gocache/
