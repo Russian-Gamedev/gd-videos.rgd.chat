@@ -67,12 +67,10 @@ func parseMessages(doc *goquery.Document) []Message {
 
 		msg.Views = strings.TrimSpace(s.Find(".tgme_widget_message_views").Text())
 
-		s.Find("time").Each(func(i int, t *goquery.Selection) {
-			if i == 0 {
-				msg.DateTime, _ = t.Attr("datetime")
-				msg.TimeLabel = strings.TrimSpace(t.Text())
-			}
-		})
+		if t := s.Find(".tgme_widget_message_date time").First(); t.Length() > 0 {
+			msg.DateTime, _ = t.Attr("datetime")
+			msg.TimeLabel = strings.TrimSpace(t.Text())
+		}
 
 		msg.IsEdited = strings.Contains(s.Find(".tgme_widget_message_info").Text(), "edited")
 
