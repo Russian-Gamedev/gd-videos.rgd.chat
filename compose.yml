@@ -1,0 +1,16 @@
+services:
+  tg-channel-parser:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tg-channel-parser
+    ports:
+      - "8090:8090"
+    volumes:
+      - pb_data:/app/pb_data
+    environment:
+      TZ: Europe/Moscow
+    restart: unless-stopped
+
+volumes:
+  pb_data:
