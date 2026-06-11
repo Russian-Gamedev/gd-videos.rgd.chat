@@ -6,6 +6,8 @@ import (
 	"fmt"
 	"net/http"
 	"strings"
+
+	"tg-channel-parser/internal/tme-parser"
 )
 
 type Client struct {
@@ -99,14 +101,26 @@ func (c *Client) Delete(webhookURL, messageID string) error {
 	return nil
 }
 
-func BuildContent(text, footerTemplate, username string, links []string) string {
-	content := text
+func BuildContent(text, footerTemplate, username string, links []tme_parser.EmbedInfo) string {
+	var content string
+
+	if text != "" {
+		content = "## " + text
+	}
 
 	for _, l := range links {
+		if l.URL == "" {
+			continue
+		}
+		title := l.Title
+		if title == "" {
+			title = l.URL
+		}
+		linkLine := fmt.Sprintf("# [%s](%s)", title, l.URL)
 		if content != "" {
 			content += "\n"
 		}
-		content += l
+		content += linkLine
 	}
 
 	if footerTemplate == "" {
