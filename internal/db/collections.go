@@ -35,6 +35,7 @@ func InitCollections(app core.App) error {
 			&core.TextField{Name: "text", Max: 100000},
 			&core.JSONField{Name: "links"},
 			&core.JSONField{Name: "media"},
+			&core.JSONField{Name: "embed"},
 			&core.TextField{Name: "views", Max: 100},
 			&core.TextField{Name: "datetime", Max: 100},
 			&core.BoolField{Name: "edited"},
@@ -51,6 +52,13 @@ func InitCollections(app core.App) error {
 			return err
 		}
 		app.Logger().Info("migrated messages collection: added deleted field")
+	}
+	if messages.Fields.GetByName("embed") == nil {
+		messages.Fields.Add(&core.JSONField{Name: "embed"})
+		if err := app.Save(messages); err != nil {
+			return err
+		}
+		app.Logger().Info("migrated messages collection: added embed field")
 	}
 
 	channels, _ = app.FindCollectionByNameOrId("channels")
