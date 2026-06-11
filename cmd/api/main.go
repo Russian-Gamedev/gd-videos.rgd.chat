@@ -4,6 +4,7 @@ import (
 	"log"
 	"tg-channel-parser/internal/api"
 	"tg-channel-parser/internal/db"
+	"tg-channel-parser/internal/discord"
 	"tg-channel-parser/internal/service"
 
 	"github.com/pocketbase/pocketbase"
@@ -20,7 +21,8 @@ func main() {
 				log.Fatalf("failed to init collections: %v", err)
 			}
 
-			parser := service.NewParserService(e.App)
+			discordClient := discord.NewClient()
+			parser := service.NewParserService(e.App, discordClient)
 
 			e.App.Cron().MustAdd("parse-channels", "*/5 * * * *", parser.RunParse)
 

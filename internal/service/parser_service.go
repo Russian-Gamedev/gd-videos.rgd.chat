@@ -8,6 +8,7 @@ import (
 	"strings"
 	"time"
 
+	"tg-channel-parser/internal/discord"
 	"tg-channel-parser/internal/tme-parser"
 
 	"github.com/pocketbase/dbx"
@@ -15,14 +16,16 @@ import (
 )
 
 type ParserService struct {
-	app    core.App
-	client *tme_parser.Client
+	app            core.App
+	client         *tme_parser.Client
+	discordClient *discord.Client
 }
 
-func NewParserService(app core.App) *ParserService {
+func NewParserService(app core.App, discordClient *discord.Client) *ParserService {
 	return &ParserService{
-		app:    app,
-		client: tme_parser.NewClient(),
+		app:            app,
+		client:         tme_parser.NewClient(),
+		discordClient: discordClient,
 	}
 }
 
@@ -69,13 +72,23 @@ func (s *ParserService) parseChannel(ch *core.Record) error {
 	username := ch.GetString("username")
 	lastPostId := int64(ch.GetFloat("last_parsed_post_id"))
 
+	var editedIDs, deletedIDs []int64
 	if lastPostId == 0 {
 		s.app.Logger().Info("channel mode=seed", "source", "parser", "channel", username, "last_parsed", 0)
-		return s.seedChannel(ch)
+		if err := s.seedChannel(ch); err != nil {
+			return err
+		}
+	} else {
+		s.app.Logger().Info("channel mode=delta", "source", "parser", "channel", username, "last_parsed", lastPostId)
+		var err error
+		editedIDs, deletedIDs, err = s.deltaChannel(ch, lastPostId)
+		if err != nil {
+			return err
+		}
 	}
 
-	s.app.Logger().Info("channel mode=delta", "source", "parser", "channel", username, "last_parsed", lastPostId)
-	return s.deltaChannel(ch, lastPostId)
+	s.forwardMessagesForChannel(ch, editedIDs, deletedIDs)
+	return nil
 }
 
 func (s *ParserService) seedChannel(ch *core.Record) error {
@@ -171,7 +184,7 @@ func (s *ParserService) seedChannel(ch *core.Record) error {
 			}
 		}
 
-		if err := s.checkDeleted(ch.Id, visibleIDs); err != nil {
+		if _, err := s.checkDeleted(ch.Id, visibleIDs); err != nil {
 			s.app.Logger().Error("deletion check failed", "source", "parser", "channel", username, "error", err)
 		}
 
@@ -202,22 +215,22 @@ func (s *ParserService) seedChannel(ch *core.Record) error {
 	return nil
 }
 
-func (s *ParserService) deltaChannel(ch *core.Record, lastPostId int64) error {
+func (s *ParserService) deltaChannel(ch *core.Record, lastPostId int64) (editedIDs, deletedIDs []int64, err error) {
 	username := ch.GetString("username")
 
 	after := lastPostId
 	page, err := s.client.Get(username, tme_parser.GetConfig{AfterId: &after})
 	if err != nil {
-		return fmt.Errorf("delta fetch: %w", err)
+		return nil, nil, fmt.Errorf("delta fetch: %w", err)
 	}
 
 	if len(page.Messages) == 0 {
 		s.app.Logger().Info("no new messages", "source", "parser", "channel", username)
-		return nil
+		return nil, nil, nil
 	}
 
 	if err := s.updateChannelInfo(ch, &page.Channel); err != nil {
-		return fmt.Errorf("update channel info: %w", err)
+		return nil, nil, fmt.Errorf("update channel info: %w", err)
 	}
 
 	saved := 0
@@ -242,16 +255,18 @@ func (s *ParserService) deltaChannel(ch *core.Record, lastPostId int64) error {
 	}
 
 	// also check latest page for edits in recent posts
-	if err := s.checkEditsOnLatestPage(ch.Id, username); err != nil {
+	editedIDs, err = s.checkEditsOnLatestPage(ch.Id, username)
+	if err != nil {
 		s.app.Logger().Error("edit check on latest page failed", "source", "parser", "channel", username, "error", err)
 	}
-	if err := s.checkDeleted(ch.Id, visibleIDs); err != nil {
+	deletedIDs, err = s.checkDeleted(ch.Id, visibleIDs)
+	if err != nil {
 		s.app.Logger().Error("deletion check failed", "source", "parser", "channel", username, "error", err)
 	}
 
 	ch.Set("last_parsed_post_id", float64(maxPostId))
 	if err := s.save(ch); err != nil {
-		return fmt.Errorf("update last_parsed: %w", err)
+		return nil, nil, fmt.Errorf("update last_parsed: %w", err)
 	}
 
 	s.app.Logger().Info("delta complete",
@@ -260,15 +275,16 @@ func (s *ParserService) deltaChannel(ch *core.Record, lastPostId int64) error {
 		"saved", saved,
 		"new_max", maxPostId,
 	)
-	return nil
+	return editedIDs, deletedIDs, nil
 }
 
-func (s *ParserService) checkEditsOnLatestPage(channelId, username string) error {
+func (s *ParserService) checkEditsOnLatestPage(channelId, username string) ([]int64, error) {
 	latest, err := s.client.Get(username, tme_parser.GetConfig{})
 	if err != nil {
-		return err
+		return nil, err
 	}
 
+	var editedIDs []int64
 	for _, msg := range latest.Messages {
 		pid := parsePostID(msg.PostID)
 		if pid <= 0 {
@@ -288,15 +304,16 @@ func (s *ParserService) checkEditsOnLatestPage(channelId, username string) error
 				s.app.Logger().Error("update edited message failed", "source", "parser", "channel", username, "post_id", pid, "error", err)
 			} else if result == "updated" {
 				s.app.Logger().Info("edited message updated", "source", "parser", "channel", username, "post_id", pid)
+				editedIDs = append(editedIDs, pid)
 			}
 		}
 	}
-	return nil
+	return editedIDs, nil
 }
 
-func (s *ParserService) checkDeleted(channelId string, visibleIDs map[int64]bool) error {
+func (s *ParserService) checkDeleted(channelId string, visibleIDs map[int64]bool) ([]int64, error) {
 	if len(visibleIDs) == 0 {
-		return nil
+		return nil, nil
 	}
 
 	var minID, maxID int64 = math.MaxInt64, 0
@@ -318,19 +335,21 @@ func (s *ParserService) checkDeleted(channelId string, visibleIDs map[int64]bool
 		dbx.Params{"channel": channelId, "min": minID, "max": maxID},
 	)
 	if err != nil {
-		return err
+		return nil, err
 	}
 
+	var deletedIDs []int64
 	for _, rec := range records {
 		pid := rec.GetFloat("post_id")
 		if !visibleIDs[int64(pid)] {
 			rec.Set("deleted", true)
 			if err := s.save(rec); err != nil {
-				return err
+				return nil, err
 			}
+			deletedIDs = append(deletedIDs, int64(pid))
 		}
 	}
-	return nil
+	return deletedIDs, nil
 }
 
 func (s *ParserService) saveMessage(channelId string, msg *tme_parser.Message) (string, error) {
@@ -370,7 +389,9 @@ func (s *ParserService) saveMessage(channelId string, msg *tme_parser.Message) (
 	record.Set("links", string(linksJSON))
 	record.Set("media", string(mediaJSON))
 	record.Set("views", msg.Views)
-	record.Set("datetime", msg.DateTime)
+	if msg.DateTime != "" {
+		record.Set("datetime", msg.DateTime)
+	}
 	record.Set("edited", msg.IsEdited)
 	record.Set("deleted", false)
 
@@ -385,7 +406,9 @@ func (s *ParserService) updateMessage(record *core.Record, msg *tme_parser.Messa
 	record.Set("links", string(linksJSON))
 	record.Set("media", string(mediaJSON))
 	record.Set("views", msg.Views)
-	record.Set("datetime", msg.DateTime)
+	if msg.DateTime != "" {
+		record.Set("datetime", msg.DateTime)
+	}
 	record.Set("edited", msg.IsEdited)
 
 	return "updated", s.save(record)
@@ -401,6 +424,211 @@ func (s *ParserService) updateChannelInfo(ch *core.Record, info *tme_parser.Chan
 
 func (s *ParserService) save(model core.Model) error {
 	return s.app.Save(model)
+}
+
+func (s *ParserService) forwardMessagesForChannel(ch *core.Record, editedIDs, deletedIDs []int64) {
+	if s.discordClient == nil {
+		return
+	}
+
+	s.forwardNewMessages(ch)
+
+	if len(editedIDs) > 0 {
+		s.forwardEditedMessages(ch.Id, editedIDs, ch.GetString("username"))
+	}
+
+	if len(deletedIDs) > 0 {
+		s.forwardDeletedMessages(ch.Id, deletedIDs)
+	}
+}
+
+func (s *ParserService) forwardNewMessages(ch *core.Record) {
+	channelId := ch.Id
+	username := ch.GetString("username")
+
+	cwhRecords, err := s.app.FindRecordsByFilter(
+		"channel_webhooks",
+		"channel={:channel} && enabled=true",
+		"", 0, 0,
+		dbx.Params{"channel": channelId},
+	)
+	if err != nil || len(cwhRecords) == 0 {
+		return
+	}
+
+	for _, cwh := range cwhRecords {
+		lastSent := int64(cwh.GetFloat("last_sent_post_id"))
+
+		if lastSent == 0 {
+			lastParsed := int64(ch.GetFloat("last_parsed_post_id"))
+			if lastParsed > 0 {
+				cwh.Set("last_sent_post_id", float64(lastParsed))
+				if err := s.save(cwh); err != nil {
+					s.app.Logger().Error("failed to init last_sent_post_id", "error", err)
+				}
+			}
+			continue
+		}
+
+		webhookId := cwh.GetString("webhook")
+		target, err := s.app.FindRecordById("webhook_targets", webhookId)
+		if err != nil || target == nil {
+			s.app.Logger().Error("webhook target not found", "id", webhookId)
+			continue
+		}
+
+		if target.GetString("type") != "discord" {
+			continue
+		}
+		webhookURL := target.GetString("url")
+		footerTemplate := cwh.GetString("footer_template")
+		if footerTemplate == "" {
+			footerTemplate = "Больше тут %"
+		}
+
+		messages, err := s.app.FindRecordsByFilter(
+			"messages",
+			"channel={:channel} && post_id>{:last_sent} && deleted=0",
+			"post_id",
+			0, 0,
+			dbx.Params{"channel": channelId, "last_sent": float64(lastSent)},
+		)
+		if err != nil {
+			s.app.Logger().Error("failed to query undelivered messages", "error", err)
+			continue
+		}
+
+		for _, msg := range messages {
+			pid := int64(msg.GetFloat("post_id"))
+			text := msg.GetString("text")
+			content := discord.BuildContent(text, footerTemplate, username)
+
+			extID, sendErr := s.discordClient.Send(webhookURL, content)
+			if sendErr != nil {
+				s.app.Logger().Error("discord send failed",
+					"channel", username,
+					"post_id", pid,
+					"error", sendErr,
+				)
+				continue
+			}
+
+			if err := s.saveDeliveredMessage(cwh.Id, msg.Id, extID); err != nil {
+				s.app.Logger().Error("failed to save delivered_message", "error", err)
+			}
+
+			cwh.Set("last_sent_post_id", float64(pid))
+			if err := s.save(cwh); err != nil {
+				s.app.Logger().Error("failed to update last_sent_post_id", "error", err)
+			}
+		}
+	}
+}
+
+func (s *ParserService) forwardEditedMessages(channelId string, editedIDs []int64, username string) {
+	for _, pid := range editedIDs {
+		deliveries, err := s.app.FindRecordsByFilter(
+			"delivered_messages",
+			"message.channel={:channel} && message.post_id={:post_id}",
+			"", 0, 0,
+			dbx.Params{"channel": channelId, "post_id": float64(pid)},
+		)
+		if err != nil || len(deliveries) == 0 {
+			continue
+		}
+
+		msgRecord, err := s.app.FindFirstRecordByFilter(
+			"messages",
+			"channel={:channel} && post_id={:post_id}",
+			dbx.Params{"channel": channelId, "post_id": float64(pid)},
+		)
+		if err != nil || msgRecord == nil {
+			continue
+		}
+		text := msgRecord.GetString("text")
+
+		for _, d := range deliveries {
+			extID := d.GetString("external_id")
+			webhookURL, footerTemplate := s.webhookForDelivery(d.GetString("channel_webhook"))
+			if webhookURL == "" {
+				continue
+			}
+
+			content := discord.BuildContent(text, footerTemplate, username)
+			if err := s.discordClient.Edit(webhookURL, extID, content); err != nil {
+				s.app.Logger().Error("discord edit failed",
+					"channel", username,
+					"post_id", pid,
+					"error", err,
+				)
+			}
+		}
+	}
+}
+
+func (s *ParserService) forwardDeletedMessages(channelId string, deletedIDs []int64) {
+	for _, pid := range deletedIDs {
+		deliveries, err := s.app.FindRecordsByFilter(
+			"delivered_messages",
+			"message.channel={:channel} && message.post_id={:post_id}",
+			"", 0, 0,
+			dbx.Params{"channel": channelId, "post_id": float64(pid)},
+		)
+		if err != nil {
+			continue
+		}
+
+		for _, d := range deliveries {
+			extID := d.GetString("external_id")
+			webhookURL, _ := s.webhookForDelivery(d.GetString("channel_webhook"))
+			if webhookURL == "" {
+				continue
+			}
+
+			if err := s.discordClient.Delete(webhookURL, extID); err != nil {
+				s.app.Logger().Error("discord delete failed",
+					"post_id", pid,
+					"error", err,
+				)
+			}
+		}
+	}
+}
+
+func (s *ParserService) webhookForDelivery(cwhId string) (webhookURL, footerTemplate string) {
+	cwh, err := s.app.FindRecordById("channel_webhooks", cwhId)
+	if err != nil || cwh == nil {
+		return "", ""
+	}
+
+	webhookId := cwh.GetString("webhook")
+	target, err := s.app.FindRecordById("webhook_targets", webhookId)
+	if err != nil || target == nil {
+		return "", ""
+	}
+
+	if target.GetString("type") != "discord" {
+		return "", ""
+	}
+
+	footerTemplate = cwh.GetString("footer_template")
+	if footerTemplate == "" {
+		footerTemplate = "Больше тут %"
+	}
+
+	return target.GetString("url"), footerTemplate
+}
+
+func (s *ParserService) saveDeliveredMessage(cwhId, msgId, extID string) error {
+	col, err := s.app.FindCollectionByNameOrId("delivered_messages")
+	if err != nil {
+		return err
+	}
+	rec := core.NewRecord(col)
+	rec.Set("channel_webhook", cwhId)
+	rec.Set("message", msgId)
+	rec.Set("external_id", extID)
+	return s.save(rec)
 }
 
 func parsePostID(postID string) int64 {
