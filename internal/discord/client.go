@@ -13,7 +13,9 @@ type Client struct {
 }
 
 type webhookPayload struct {
-	Content string `json:"content"`
+	Content   string `json:"content"`
+	Username  string `json:"username,omitempty"`
+	AvatarURL string `json:"avatar_url,omitempty"`
 }
 
 type webhookResponse struct {
@@ -26,8 +28,8 @@ func NewClient() *Client {
 	}
 }
 
-func (c *Client) Send(webhookURL, content string) (string, error) {
-	payload := webhookPayload{Content: content}
+func (c *Client) Send(webhookURL, username, avatarURL, content string) (string, error) {
+	payload := webhookPayload{Content: content, Username: username, AvatarURL: avatarURL}
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return "", fmt.Errorf("discord send marshal: %w", err)
@@ -52,8 +54,8 @@ func (c *Client) Send(webhookURL, content string) (string, error) {
 	return result.ID, nil
 }
 
-func (c *Client) Edit(webhookURL, messageID, content string) error {
-	payload := webhookPayload{Content: content}
+func (c *Client) Edit(webhookURL, messageID, username, avatarURL, content string) error {
+	payload := webhookPayload{Content: content, Username: username, AvatarURL: avatarURL}
 	body, err := json.Marshal(payload)
 	if err != nil {
 		return fmt.Errorf("discord edit marshal: %w", err)

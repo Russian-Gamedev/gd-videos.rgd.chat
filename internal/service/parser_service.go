@@ -434,7 +434,7 @@ func (s *ParserService) forwardMessagesForChannel(ch *core.Record, editedIDs, de
 	s.forwardNewMessages(ch)
 
 	if len(editedIDs) > 0 {
-		s.forwardEditedMessages(ch.Id, editedIDs, ch.GetString("username"))
+		s.forwardEditedMessages(ch.Id, editedIDs, ch.GetString("username"), ch.GetString("title"), ch.GetString("avatar_url"))
 	}
 
 	if len(deletedIDs) > 0 {
@@ -504,7 +504,7 @@ func (s *ParserService) forwardNewMessages(ch *core.Record) {
 			links := parseLinks(msg.GetString("links"))
 			content := discord.BuildContent(text, footerTemplate, username, links)
 
-			extID, sendErr := s.discordClient.Send(webhookURL, content)
+			extID, sendErr := s.discordClient.Send(webhookURL, ch.GetString("title"), ch.GetString("avatar_url"), content)
 			if sendErr != nil {
 				s.app.Logger().Error("discord send failed",
 					"channel", username,
@@ -526,7 +526,7 @@ func (s *ParserService) forwardNewMessages(ch *core.Record) {
 	}
 }
 
-func (s *ParserService) forwardEditedMessages(channelId string, editedIDs []int64, username string) {
+func (s *ParserService) forwardEditedMessages(channelId string, editedIDs []int64, username, channelTitle, avatarURL string) {
 	for _, pid := range editedIDs {
 		deliveries, err := s.app.FindRecordsByFilter(
 			"delivered_messages",
@@ -557,7 +557,7 @@ func (s *ParserService) forwardEditedMessages(channelId string, editedIDs []int6
 			}
 
 			content := discord.BuildContent(text, footerTemplate, username, links)
-			if err := s.discordClient.Edit(webhookURL, extID, content); err != nil {
+			if err := s.discordClient.Edit(webhookURL, extID, channelTitle, avatarURL, content); err != nil {
 				s.app.Logger().Error("discord edit failed",
 					"channel", username,
 					"post_id", pid,
