@@ -1,10 +1,12 @@
 package api
 
 import (
-		"encoding/json"
+	"encoding/json"
 	"math"
 	"net/http"
 	"strconv"
+
+	"tg-channel-parser/internal/tme-parser"
 
 	"github.com/pocketbase/dbx"
 	"github.com/pocketbase/pocketbase/core"
@@ -64,19 +66,19 @@ func RegisterRoutes(root *router.Router[*core.RequestEvent]) {
 		}
 
 		type messageItem struct {
-			Id       int64             `json:"id"`
-			Text     *string           `json:"text,omitempty"`
-			Links    []string          `json:"links,omitempty"`
-			Media    []json.RawMessage `json:"media,omitempty"`
-			Views    int64             `json:"views"`
-			Datetime string            `json:"datetime"`
-			Edited   bool              `json:"edited"`
+			Id       int64                    `json:"id"`
+			Text     *string                  `json:"text,omitempty"`
+			Links    []tme_parser.EmbedInfo   `json:"links,omitempty"`
+			Media    []json.RawMessage        `json:"media,omitempty"`
+			Views    int64                    `json:"views"`
+			Datetime string                   `json:"datetime"`
+			Edited   bool                     `json:"edited"`
 		}
 
 		items := make([]messageItem, 0, len(records))
 		for _, r := range records {
-			var links []string
-			if s := r.GetString("links"); s != "" && s != "[]" {
+			var links []tme_parser.EmbedInfo
+			if s := r.GetString("links"); s != "" && s != "[]" && s != "null" {
 				json.Unmarshal([]byte(s), &links)
 			}
 			var media []json.RawMessage
