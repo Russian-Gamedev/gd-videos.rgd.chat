@@ -97,15 +97,23 @@ func (c *Client) Delete(webhookURL, messageID string) error {
 	return nil
 }
 
-func BuildContent(text, footerTemplate, username string) string {
+func BuildContent(text, footerTemplate, username string, links []string) string {
+	content := text
+
+	for _, l := range links {
+		if content != "" {
+			content += "\n"
+		}
+		content += l
+	}
+
 	if footerTemplate == "" {
-		return truncate(text)
+		return truncate(content)
 	}
 
 	link := fmt.Sprintf("[@%s](<https://t.me/%s>)", username, username)
 	footer := strings.ReplaceAll(footerTemplate, "%", link)
 
-	content := text
 	if content != "" && footer != "" {
 		content += "\n\n"
 	}
