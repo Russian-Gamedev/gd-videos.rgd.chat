@@ -16,15 +16,15 @@ import (
 )
 
 type ParserService struct {
-	app            core.App
-	client         *tme_parser.Client
+	app           core.App
+	client        *tme_parser.Client
 	discordClient *discord.Client
 }
 
 func NewParserService(app core.App, discordClient *discord.Client) *ParserService {
 	return &ParserService{
-		app:            app,
-		client:         tme_parser.NewClient(),
+		app:           app,
+		client:        tme_parser.NewClient(),
 		discordClient: discordClient,
 	}
 }
@@ -299,6 +299,14 @@ func (s *ParserService) checkEditsOnLatestPage(channelId, username string) ([]in
 			if err != nil || existing == nil {
 				continue
 			}
+			if len(msg.Links) == 0 {
+				s.app.Logger().Info("edited message no longer has links, marking deleted", "source", "parser", "channel", username, "post_id", pid)
+				existing.Set("deleted", true)
+				if err := s.save(existing); err != nil {
+					s.app.Logger().Error("failed to mark deleted edited message", "source", "parser", "error", err)
+				}
+				continue
+			}
 			result, err := s.updateMessage(existing, &msg)
 			if err != nil {
 				s.app.Logger().Error("update edited message failed", "source", "parser", "channel", username, "post_id", pid, "error", err)
@@ -358,6 +366,17 @@ func (s *ParserService) saveMessage(channelId string, msg *tme_parser.Message) (
 		return "skipped", nil
 	}
 
+	var hasValidLinks bool
+	for _, l := range msg.Links {
+		if l.URL != "" || l.Provider != "" || l.Title != "" {
+			hasValidLinks = true
+			break
+		}
+	}
+	if !hasValidLinks {
+		return "skipped", nil
+	}
+
 	existing, err := s.app.FindFirstRecordByFilter(
 		"messages",
 		"channel={:channel} && post_id={:post_id}",
@@ -378,40 +397,34 @@ func (s *ParserService) saveMessage(channelId string, msg *tme_parser.Message) (
 		return "exists", nil
 	}
 
-	linksJSON, _ := json.Marshal(msg.Links)
-	mediaJSON, _ := json.Marshal(msg.Media)
-
 	col, _ := s.app.FindCollectionByNameOrId("messages")
 	record := core.NewRecord(col)
 	record.Set("channel", channelId)
 	record.Set("post_id", float64(pid))
-	record.Set("text", msg.Text)
-	record.Set("links", string(linksJSON))
-	record.Set("media", string(mediaJSON))
-	record.Set("views", msg.Views)
-	if msg.DateTime != "" {
-		record.Set("datetime", msg.DateTime)
-	}
-	record.Set("edited", msg.IsEdited)
 	record.Set("deleted", false)
+	setMessageFields(record, msg)
 
 	return "created", s.save(record)
 }
 
 func (s *ParserService) updateMessage(record *core.Record, msg *tme_parser.Message) (string, error) {
+	setMessageFields(record, msg)
+	return "updated", s.save(record)
+}
+
+func setMessageFields(record *core.Record, msg *tme_parser.Message) {
 	linksJSON, _ := json.Marshal(msg.Links)
 	mediaJSON, _ := json.Marshal(msg.Media)
 
 	record.Set("text", msg.Text)
 	record.Set("links", string(linksJSON))
 	record.Set("media", string(mediaJSON))
+	record.Set("embed", "null")
 	record.Set("views", msg.Views)
 	if msg.DateTime != "" {
 		record.Set("datetime", msg.DateTime)
 	}
 	record.Set("edited", msg.IsEdited)
-
-	return "updated", s.save(record)
 }
 
 func (s *ParserService) updateChannelInfo(ch *core.Record, info *tme_parser.ChannelInfo) error {
@@ -633,9 +646,9 @@ func (s *ParserService) saveDeliveredMessage(cwhId, msgId, extID string) error {
 	return s.save(rec)
 }
 
-func parseLinks(s string) []string {
-	var links []string
-	if s != "" && s != "[]" {
+func parseLinks(s string) []tme_parser.EmbedInfo {
+	var links []tme_parser.EmbedInfo
+	if s != "" && s != "[]" && s != "null" {
 		json.Unmarshal([]byte(s), &links)
 	}
 	return links
