@@ -1,8 +1,9 @@
 services:
   tg-channel-parser:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: ghcr.io/damirlut/tg-channel-parser:latest
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
     container_name: tg-channel-parser
     ports:
       - "8090:8090"
@@ -10,6 +11,9 @@ services:
       - pb_data:/app/pb_data
     environment:
       TZ: Europe/Moscow
+      HTTP_PROXY: "${HTTP_PROXY:-}"
+      HTTPS_PROXY: "${HTTPS_PROXY:-}"
+      NO_PROXY: "${NO_PROXY:-}"
     restart: unless-stopped
 
 volumes:
