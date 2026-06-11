@@ -56,6 +56,32 @@ func TestParseIndexHTML(t *testing.T) {
 		t.Error("expected no media in first message")
 	}
 
+	var embed *EmbedInfo
+	for _, l := range first.Links {
+		if l.Provider != "" {
+			embed = &l
+			break
+		}
+	}
+	if embed == nil {
+		t.Fatal("expected embed in first message links")
+	}
+	if embed.URL != "https://youtu.be/Qje-PSZeMHI" {
+		t.Errorf("expected embed URL 'https://youtu.be/Qje-PSZeMHI', got %q", embed.URL)
+	}
+	if embed.Provider != "YouTube" {
+		t.Errorf("expected embed provider 'YouTube', got %q", embed.Provider)
+	}
+	if embed.Title != "Игры заставляют нас копить мусор" {
+		t.Errorf("expected embed title, got %q", embed.Title)
+	}
+	if embed.Description == "" {
+		t.Error("expected embed description")
+	}
+	if embed.Thumbnail == "" {
+		t.Error("expected embed thumbnail")
+	}
+
 	last := page.Messages[len(page.Messages)-1]
 	if last.IsEdited {
 		t.Error("expected last message not to be edited")

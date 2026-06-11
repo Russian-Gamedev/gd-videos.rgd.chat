@@ -16,7 +16,7 @@ type ChannelInfo struct {
 type Message struct {
 	PostID    string      `json:"post_id"`
 	Text      string      `json:"text"`
-	Links     []string    `json:"links"`
+	Links     []EmbedInfo `json:"links"`
 	Media     []MediaItem `json:"media"`
 	Views     string      `json:"views"`
 	DateTime  string      `json:"datetime"`
@@ -27,4 +27,12 @@ type Message struct {
 type MediaItem struct {
 	Type string `json:"type"`
 	URL  string `json:"url"`
+}
+
+type EmbedInfo struct {
+	URL         string `json:"url,omitempty"`
+	Provider    string `json:"provider,omitempty"`
+	Title       string `json:"title,omitempty"`
+	Description string `json:"description,omitempty"`
+	Thumbnail   string `json:"thumbnail,omitempty"`
 }
