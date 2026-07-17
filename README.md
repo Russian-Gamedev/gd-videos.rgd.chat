@@ -160,8 +160,8 @@ go build ./cmd/api/main.go
 При пуше в ветку `main` GitHub Actions автоматически:
 1. Запускает сборку и тесты
 2. В случае успеха собирает Docker-образ
-3. Публикует образ в `ghcr.io/damirlut/tg-channel-parser`
+3. Публикует образ в `ghcr.io/russian-gamedev/gd-videos.rgd.chat`
 
 ## Лицензия
 
-GPL v3
+MIT

@@ -1,6 +1,6 @@
 services:
   tg-channel-parser:
-    image: ghcr.io/damirlut/tg-channel-parser:latest
+    image: ghcr.io/russian-gamedev/gd-videos.rgd.chat:latest
     # build:
     #   context: .
     #   dockerfile: Dockerfile
