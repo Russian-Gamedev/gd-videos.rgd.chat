@@ -52,6 +52,10 @@ func parseMessages(doc *goquery.Document) []Message {
 		}
 		msg.PostID = postID
 
+		if s.Find(".js-widget_message").HasClass("service_message") {
+			return
+		}
+
 		if s.Find(".tgme_widget_message_user").Length() == 0 {
 			return
 		}

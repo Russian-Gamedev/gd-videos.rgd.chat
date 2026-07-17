@@ -87,3 +87,21 @@ func TestParseIndexHTML(t *testing.T) {
 		t.Error("expected last message not to be edited")
 	}
 }
+func TestParseSkipsServiceMessage(t *testing.T) {
+	html := `<div class="tgme_widget_message_wrap js-widget_message_wrap">
+		<div class="tgme_widget_message text_not_supported_wrap service_message js-widget_message" data-post="test/1">
+			<div class="tgme_widget_message_user"></div>
+			<div class="tgme_widget_message_bubble">
+				<div class="tgme_widget_message_text js-message_text">pinned a photo</div>
+			</div>
+		</div>
+	</div>`
+
+	page, err := Parse(html)
+	if err != nil {
+		t.Fatal("Parse error:", err)
+	}
+	if len(page.Messages) != 0 {
+		t.Fatalf("expected 0 messages (service message skipped), got %d", len(page.Messages))
+	}
+}
