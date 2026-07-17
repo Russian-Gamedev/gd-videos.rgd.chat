@@ -87,6 +87,55 @@ func TestParseIndexHTML(t *testing.T) {
 		t.Error("expected last message not to be edited")
 	}
 }
+
+func TestParseFiltersNonWhitelistedDomains(t *testing.T) {
+	html := `<div class="tgme_widget_message_wrap">
+		<div class="js-widget_message" data-post="test/1"></div>
+		<div class="tgme_widget_message_user"></div>
+		<div class="tgme_widget_message_text">
+			<a href="https://www.youtube.com/watch?v=abc123">YouTube</a>
+			<a href="https://example.com/path">Example</a>
+		</div>
+	</div>`
+
+	page, err := Parse(html)
+	if err != nil {
+		t.Fatal("Parse error:", err)
+	}
+	if len(page.Messages) != 1 {
+		t.Fatalf("expected 1 message, got %d", len(page.Messages))
+	}
+	if len(page.Messages[0].Links) != 1 {
+		t.Fatalf("expected 1 allowed link, got %d", len(page.Messages[0].Links))
+	}
+	if page.Messages[0].Links[0].URL != "https://www.youtube.com/watch?v=abc123" {
+		t.Fatalf("expected youtube link, got %q", page.Messages[0].Links[0].URL)
+	}
+}
+
+func TestParseFiltersNonYouTubeEmbed(t *testing.T) {
+	html := `<div class="tgme_widget_message_wrap">
+		<div class="js-widget_message" data-post="test/1"></div>
+		<div class="tgme_widget_message_user"></div>
+		<div class="tgme_widget_message_text"></div>
+		<a class="tgme_widget_message_link_preview" href="https://example.com/article">
+			<div class="link_preview_site_name accent_color">Example</div>
+			<div class="link_preview_title">Some Article</div>
+		</a>
+	</div>`
+
+	page, err := Parse(html)
+	if err != nil {
+		t.Fatal("Parse error:", err)
+	}
+	if len(page.Messages) != 1 {
+		t.Fatalf("expected 1 message, got %d", len(page.Messages))
+	}
+	if len(page.Messages[0].Links) != 0 {
+		t.Fatalf("expected 0 links for non-YouTube embed, got %d", len(page.Messages[0].Links))
+	}
+}
+
 func TestParseSkipsServiceMessage(t *testing.T) {
 	html := `<div class="tgme_widget_message_wrap js-widget_message_wrap">
 		<div class="tgme_widget_message text_not_supported_wrap service_message js-widget_message" data-post="test/1">
@@ -103,5 +152,31 @@ func TestParseSkipsServiceMessage(t *testing.T) {
 	}
 	if len(page.Messages) != 0 {
 		t.Fatalf("expected 0 messages (service message skipped), got %d", len(page.Messages))
+	}
+}
+
+func TestParseKeepsYouTubeEmbed(t *testing.T) {
+	html := `<div class="tgme_widget_message_wrap">
+		<div class="js-widget_message" data-post="test/1"></div>
+		<div class="tgme_widget_message_user"></div>
+		<div class="tgme_widget_message_text"></div>
+		<a class="tgme_widget_message_link_preview" href="https://youtu.be/abc123defgh">
+			<div class="link_preview_site_name accent_color">YouTube</div>
+			<div class="link_preview_title">Test Video</div>
+		</a>
+	</div>`
+
+	page, err := Parse(html)
+	if err != nil {
+		t.Fatal("Parse error:", err)
+	}
+	if len(page.Messages) != 1 {
+		t.Fatalf("expected 1 message, got %d", len(page.Messages))
+	}
+	if len(page.Messages[0].Links) != 1 {
+		t.Fatalf("expected 1 link for YouTube embed, got %d", len(page.Messages[0].Links))
+	}
+	if page.Messages[0].Links[0].URL != "https://youtu.be/abc123defgh" {
+		t.Fatalf("expected embed URL 'https://youtu.be/abc123defgh', got %q", page.Messages[0].Links[0].URL)
 	}
 }

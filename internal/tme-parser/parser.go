@@ -1,6 +1,7 @@
 package tme_parser
 
 import (
+	"net/url"
 	"regexp"
 	"strings"
 
@@ -9,6 +10,28 @@ import (
 
 var backgroundImageURLPattern = regexp.MustCompile(`url\(['"]?([^'")]+)['"]?\)`)
 var youtuBeURLPattern = regexp.MustCompile(`(?:youtube\.com/(?:watch\?v=|shorts/|embed/)|youtu\.be/)([a-zA-Z0-9_-]{11})`)
+
+var allowedLinkHosts = []string{
+	"youtube.com",
+	"www.youtube.com",
+	"m.youtube.com",
+	"youtu.be",
+}
+
+func shouldIncludeLink(rawURL string) bool {
+	parsedURL, err := url.Parse(rawURL)
+	if err != nil || parsedURL.Host == "" {
+		return false
+	}
+
+	host := strings.ToLower(parsedURL.Hostname())
+	for _, h := range allowedLinkHosts {
+		if host == h {
+			return true
+		}
+	}
+	return false
+}
 
 func Parse(html string) (*ChannelPage, error) {
 	doc, err := goquery.NewDocumentFromReader(strings.NewReader(html))
@@ -64,7 +87,9 @@ func parseMessages(doc *goquery.Document) []Message {
 
 		s.Find(".tgme_widget_message_text a").Each(func(_ int, a *goquery.Selection) {
 			if href, exists := a.Attr("href"); exists {
-				msg.Links = append(msg.Links, EmbedInfo{URL: href})
+				if shouldIncludeLink(href) {
+					msg.Links = append(msg.Links, EmbedInfo{URL: href})
+				}
 				msg.Text = strings.ReplaceAll(msg.Text, strings.TrimSpace(a.Text()), "")
 			}
 		})
@@ -157,6 +182,9 @@ func parseEmbed(s *goquery.Selection) *EmbedInfo {
 
 	if href, exists := preview.Attr("href"); exists {
 		embed.URL = strings.TrimSpace(href)
+	}
+	if embed.URL != "" && !shouldIncludeLink(embed.URL) {
+		return nil
 	}
 
 	if style, exists := preview.Find(".link_preview_right_image").First().Attr("style"); exists {
