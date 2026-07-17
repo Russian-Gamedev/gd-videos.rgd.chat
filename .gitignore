@@ -2,3 +2,5 @@
 pb_data/
 .idea/
 .gocache/
+.env
+.env.*

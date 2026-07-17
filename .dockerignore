@@ -5,3 +5,5 @@ pb_data
 Makefile
 *.md
 testdata
+.env
+.env.*
