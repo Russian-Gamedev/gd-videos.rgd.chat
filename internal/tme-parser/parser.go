@@ -33,6 +33,19 @@ func shouldIncludeLink(rawURL string) bool {
 	return false
 }
 
+// VideoID extracts the YouTube video ID from a URL, or "" if it is not a YouTube link.
+func VideoID(rawURL string) string {
+	if m := youtuBeURLPattern.FindStringSubmatch(rawURL); len(m) == 2 {
+		return m[1]
+	}
+	return ""
+}
+
+func sameVideo(a, b string) bool {
+	id := VideoID(a)
+	return id != "" && id == VideoID(b)
+}
+
 func Parse(html string) (*ChannelPage, error) {
 	doc, err := goquery.NewDocumentFromReader(strings.NewReader(html))
 	if err != nil {
@@ -100,7 +113,7 @@ func parseMessages(doc *goquery.Document) []Message {
 
 		if embed := parseEmbed(s); embed != nil {
 			for i := len(msg.Links) - 1; i >= 0; i-- {
-				if msg.Links[i].URL == embed.URL && msg.Links[i].Provider == "" {
+				if msg.Links[i].Provider == "" && sameVideo(msg.Links[i].URL, embed.URL) {
 					msg.Links = append(msg.Links[:i], msg.Links[i+1:]...)
 				}
 			}
@@ -194,8 +207,8 @@ func parseEmbed(s *goquery.Selection) *EmbedInfo {
 	}
 
 	if embed.Thumbnail == "" && (strings.Contains(embed.URL, "youtube") || strings.Contains(embed.URL, "youtu.be")) {
-		if match := youtuBeURLPattern.FindStringSubmatch(embed.URL); len(match) == 2 {
-			embed.Thumbnail = "https://i.ytimg.com/vi/" + match[1] + "/hqdefault.jpg"
+		if id := VideoID(embed.URL); id != "" {
+			embed.Thumbnail = "https://i.ytimg.com/vi/" + id + "/hqdefault.jpg"
 		}
 	}
 

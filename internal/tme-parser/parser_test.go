@@ -136,6 +136,35 @@ func TestParseFiltersNonYouTubeEmbed(t *testing.T) {
 	}
 }
 
+func TestParseDedupsAnchorAndPreviewByVideoID(t *testing.T) {
+	html := `<div class="tgme_widget_message_wrap">
+		<div class="js-widget_message" data-post="test/1"></div>
+		<div class="tgme_widget_message_user"></div>
+		<div class="tgme_widget_message_text js-message_text" dir="auto"><a
+			href="https://www.youtube.com/watch?v=RW_iEfB5DNM" target="_blank" rel="noopener">https://www.youtube.com/watch?v=RW_iEfB5DNM</a>
+		</div>
+		<a class="tgme_widget_message_link_preview" href="https://youtu.be/RW_iEfB5DNM">
+			<div class="link_preview_site_name accent_color">YouTube</div>
+			<div class="link_preview_title">I Made Street Fighter Babes</div>
+		</a>
+	</div>`
+
+	page, err := Parse(html)
+	if err != nil {
+		t.Fatal("Parse error:", err)
+	}
+	if len(page.Messages) != 1 {
+		t.Fatalf("expected 1 message, got %d", len(page.Messages))
+	}
+	links := page.Messages[0].Links
+	if len(links) != 1 {
+		t.Fatalf("expected 1 link after dedup, got %d: %+v", len(links), links)
+	}
+	if links[0].Title != "I Made Street Fighter Babes" {
+		t.Errorf("expected titled embed to survive, got %+v", links[0])
+	}
+}
+
 func TestParseSkipsServiceMessage(t *testing.T) {
 	html := `<div class="tgme_widget_message_wrap js-widget_message_wrap">
 		<div class="tgme_widget_message text_not_supported_wrap service_message js-widget_message" data-post="test/1">

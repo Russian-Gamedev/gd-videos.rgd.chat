@@ -108,19 +108,27 @@ func BuildContent(text, footerTemplate, username string, links []tme_parser.Embe
 		content = "## " + text
 	}
 
+	titled := make(map[string]bool, len(links))
+	for _, l := range links {
+		if id := tme_parser.VideoID(l.URL); id != "" && l.Title != "" && l.Title != l.URL {
+			titled[id] = true
+		}
+	}
+
 	for _, l := range links {
 		if l.URL == "" {
 			continue
 		}
-		title := l.Title
-		if title == "" {
-			title = l.URL
+		// Discord renders [url](url) as literal text, so a titleless link goes out as a bare URL —
+		// and is skipped entirely when the same video appears with a real title.
+		if l.Title == "" || l.Title == l.URL {
+			if titled[tme_parser.VideoID(l.URL)] {
+				continue
+			}
+			content = appendLine(content, "# "+l.URL)
+			continue
 		}
-		linkLine := fmt.Sprintf("# [%s](%s)", title, l.URL)
-		if content != "" {
-			content += "\n"
-		}
-		content += linkLine
+		content = appendLine(content, fmt.Sprintf("# [%s](%s)", l.Title, l.URL))
 	}
 
 	if footerTemplate == "" {
@@ -136,6 +144,13 @@ func BuildContent(text, footerTemplate, username string, links []tme_parser.Embe
 	content += footer
 
 	return truncate(content)
+}
+
+func appendLine(content, line string) string {
+	if content != "" {
+		content += "\n"
+	}
+	return content + line
 }
 
 func truncate(s string) string {
